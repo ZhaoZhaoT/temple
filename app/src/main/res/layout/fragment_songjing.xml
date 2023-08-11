@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF6"
+    >
+    <LinearLayout
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/chaojing_bg"
+            android:padding="15dp"
+            >
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文书名"
+                android:textStyle="bold"
+                android:textColor="#886860"
+                android:textSize="16sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/word_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文字数: 234"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/copy_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="抄经次数: 234次"
+                android:layout_below="@+id/name"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/chaojing_bg"
+            android:padding="15dp"
+            >
+            <TextView
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文书名"
+                android:textStyle="bold"
+                android:textColor="#886860"
+                android:textSize="16sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/word_count1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文字数: 234"
+                android:layout_below="@+id/name1"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/copy_count1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="抄经次数: 234次"
+                android:layout_below="@+id/name1"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/chaojing_bg"
+            android:padding="15dp"
+            >
+            <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文书名"
+                android:textStyle="bold"
+                android:textColor="#886860"
+                android:textSize="16sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/word_count2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经文字数: 234"
+                android:layout_below="@+id/name2"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/copy_count2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="抄经次数: 234次"
+                android:layout_below="@+id/name2"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                ></TextView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

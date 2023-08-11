@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/all_sur_name_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingLeft="15dp"
+        android:paddingTop="16dp"
+        android:paddingRight="17dp"
+        android:paddingBottom="13dp"
+        android:text="×"
+        android:textColor="#D4C4AA"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-15dp"
+        android:text="创建家庭"
+        android:textColor="#ff6d1b13"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ed_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/deep_gry_shallow_radius_twelve"
+        android:imeOptions="actionSearch"
+        android:lines="1"
+        android:paddingLeft="15dp"
+        android:paddingTop="20.5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="20.5dp"
+        android:hint="请输入名字"
+        android:textColor="#333333"
+        android:textColorHint="#999999"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/tv_affrim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="30dp"
+        android:background="@mipmap/submit_btn"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#6D1B13"
+        android:textSize="16sp" />
+
+</LinearLayout>
+
+

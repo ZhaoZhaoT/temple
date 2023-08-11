@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="124dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_wedding" />
+
+        <TextView
+            android:id="@+id/tv_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:textSize="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingRight="8dp"
+            android:background="@drawable/deep_red_shallow_radius_four"
+            android:textColor="@color/white"
+            android:text="相册" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="陈丽 王吏婚宴"
+        android:textColor="#ff333333"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="心杰"
+            android:textColor="#ff886860"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

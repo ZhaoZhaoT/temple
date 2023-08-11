@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lin_bg"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/deep_yellow_two_radius_twelve"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingBottom="25dp">
+
+    <ImageView
+        android:id="@+id/iv_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/icon_right_arrow"
+        android:textColor="#ff6d1b13"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_defult_head"
+        android:textColor="#ff6d1b13"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text=""
+        android:textColor="#ff999999"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="王铭"
+        android:textColor="#ff333333"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

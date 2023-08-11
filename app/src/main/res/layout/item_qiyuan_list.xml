@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12.5dp"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:id="@+id/tv_nikename"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/head"
+            android:layout_weight="1"
+            android:text="明天会更好"
+            android:textColor="#886860"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:text="¥200.00"
+            android:textColor="#E85B35"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_qiyuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nikename"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/head"
+        android:drawableLeft="@mipmap/qiyuan_sign"
+        android:drawablePadding="13dp"
+        android:text="愿保佑我兔年得一健康儿子"
+        android:textColor="#886860"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="15dp"
+        android:text="2023-06-13 14:25"
+        android:textColor="#999999"
+        android:textSize="14sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="#DBB081" />
+</LinearLayout>

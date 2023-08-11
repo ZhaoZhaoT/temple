@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_title"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+
+    <FrameLayout
+        android:layout_alignParentLeft="true"
+        android:id="@+id/layout_left_back"
+        android:layout_width="40dp"
+        android:layout_height="match_parent">
+
+        <!--android:src="@mipmap/left_back"-->
+        <ImageView
+            android:src="@mipmap/left_back"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:id="@+id/iv_base_back"
+            android:layout_width="10dp"
+            android:layout_height="15dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:id="@+id/tv_base_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+
+    <!--        android:drawableLeft="@mipmap/icon_search"-->
+    <EditText
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/layout_left_back"
+        android:layout_toLeftOf="@+id/tv_right_text"
+        android:background="#F4F5F8"
+        android:layout_marginRight="16dp"
+        android:drawablePadding="5dp"
+        android:paddingLeft="8dp"
+        android:inputType="text"
+        android:textSize="14sp"
+        android:hint="请输入写字楼/商圈名称"
+        android:id="@+id/base_edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"></EditText>
+
+
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:id="@+id/tv_base_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+    <TextView
+        android:visibility="gone"
+        android:text="全部"
+        android:drawablePadding="5dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:id="@+id/tv_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+    <ImageView
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:id="@+id/iv_right_add"
+        android:layout_marginRight="15dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"></ImageView>
+
+    <View
+        android:visibility="visible"
+        android:id="@+id/view_line"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+</RelativeLayout>

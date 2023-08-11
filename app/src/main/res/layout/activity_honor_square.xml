@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg_gray"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/square_bg" />
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="45dp"
+        android:background="@mipmap/icon_square_content_bg">
+
+        <ImageView
+            android:id="@+id/iv_content_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:src="@mipmap/icon_square_content_top" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_content_top"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="28dp"
+            android:text="祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容祭祀文化相关内容"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@mipmap/icon_square_title" />
+
+</RelativeLayout>

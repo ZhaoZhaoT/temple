@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LoadingLayout">
+        <attr name="loadingView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="emptyView" format="reference" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="CustomPicText">
+        <attr name="pic_src" format="reference"/>
+        <attr name="pic_backgroud_width" format="dimension"/>
+        <attr name="pic_backgroud_height" format="dimension"/>
+        <attr name="pic_padding" format="dimension"/>
+
+        <attr name="pic_text" format="string"/>
+        <attr name="pic_text_color" format="color"/>
+        <attr name="pic_text_size" format="integer"/>
+    </declare-styleable>
+
+
+</resources>

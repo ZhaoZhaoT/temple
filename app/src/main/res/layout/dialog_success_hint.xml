@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/hint_small_bg"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    tools:ignore="MissingDefaultResource">
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:text="完成撞钟三下，以祈 [福禄寿]"
+        android:textColor="#ff6d1b13"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tv_affrim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@mipmap/submit_btn"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#6D1B13"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
+
+

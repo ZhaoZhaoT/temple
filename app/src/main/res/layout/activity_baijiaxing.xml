@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="百家姓"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp">
+
+        <LinearLayout
+            android:id="@+id/layout_surname_zhao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zhào" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赵" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="qián" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="钱" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sūn" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="孙" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lǐ" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="李" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_one"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zhōu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="周" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wú"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="吴"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zheng"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="郑"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wang"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="王"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_surname_sacrifice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="姓氏祭祀"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_ancestral_worship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="宗亲祭祀"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_wedding_banquet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="汉婚汉宴"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFDF6"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="访客记录"
+        android:textColor="#ff000000"
+        android:textSize="18sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/view_list"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="20dp"
+        android:paddingRight="15dp"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_memorial_ceremony_record_list" />
+
+
+</LinearLayout>

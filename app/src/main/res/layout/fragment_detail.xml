@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:banner="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_toptext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#e6333333"
+                android:textSize="14sp"
+                android:layout_margin="15dp"
+                android:text="生儿育女，在民间被视为极其庄重的人生大事。多子多福的文化观念深入人心，孩子对于家庭来说，意味着后继有人，香火不断。\n\n
+在道教的经籍中，称碧霞元君受天帝之命，证位天仙，统摄岳府神兵，遍察人间善恶。而问传说最盛的则是碧霞元君能够保佑子嗣，宛如送子观、四元君既为春山娘，面““字在《易经·泰卦》内表示“天地交而万物通”之意，所以人们便将其理解为妇女生子，所以民间普通视其为“送子娘娘”。\n\n
+根据《太上老君说天仙玉女碧霞元君护世弘济妙经》，碧霞元君不仅仅“统摄岳府神兵，照察人间善恶”，还持如意“洗涤罪愆，青姑变善，灰河化池，幽爽滞魄，承经托化”，普度血湖，女性信众虔心礼拜供养，自然获福无量。若人缺嗣继世，虔诚求请，临险之时，心祷昧告，碧霞元君不论高卑，一时同仁。凡怀善诚，必赐庇佑。"
+                ></TextView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

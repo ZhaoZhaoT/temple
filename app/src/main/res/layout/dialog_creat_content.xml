@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/all_sur_name_bg"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="15dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="创建"
+        android:textStyle="bold"
+        android:textColor="#ff6d1b13"
+        android:textSize="18sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22.5dp"
+            android:layout_weight="1"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="21dp"
+                android:paddingTop="12.5dp"
+                android:paddingRight="21dp"
+                android:paddingBottom="12.5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/pop_video" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="视频"
+                    android:textColor="#ffd4c4aa"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22.5dp"
+            android:layout_weight="1"
+            android:alpha="15"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="21dp"
+                android:paddingTop="12.5dp"
+                android:paddingRight="21dp"
+                android:paddingBottom="12.5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/pop_video" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="视频"
+                    android:textColor="#ffd4c4aa"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22.5dp"
+            android:layout_weight="1"
+            android:alpha="15"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="21dp"
+                android:paddingTop="12.5dp"
+                android:paddingRight="21dp"
+                android:paddingBottom="12.5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/pop_video" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="视频"
+                    android:textColor="#ffd4c4aa"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_affrim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="30dp"
+        android:background="@mipmap/submit_btn"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#6D1B13"
+        android:textSize="16sp" />
+
+</LinearLayout>
+
+

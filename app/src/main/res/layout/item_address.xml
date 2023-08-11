@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:bl_corners_radius="8dp"
+    app:bl_solid_color="@color/white"
+    android:paddingLeft="11dp"
+    android:paddingRight="16dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="汉街总部国际E座F17"
+        android:textSize="15sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_toRightOf="@+id/tv_edit"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/tv_default"
+        android:layout_below="@+id/tv_title"
+        android:text="王晶晶    182 0265 0026"
+        android:textSize="13sp"
+        android:textColor="@color/text_gray2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:visibility="visible"
+        app:bl_corners_radius="2dp"
+        app:bl_solid_color="@color/tabcolor"
+        android:layout_below="@+id/tv_title"
+        android:id="@+id/tv_default"
+        android:gravity="center"
+        android:text="默认"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:paddingRight="2dp"
+        android:paddingLeft="2dp"
+        android:layout_width="28dp"
+        android:layout_height="17dp"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/tv_del"
+        android:text="删除"
+        android:textSize="13sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/text_gray3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
+    <View
+        android:id="@+id/view_line"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_del"
+        android:background="@color/text_gray"
+        android:layout_width="1dp"
+        android:layout_height="11dp"/>
+
+    <TextView
+        android:id="@+id/tv_edit"
+        android:text="编辑"
+        android:textSize="13sp"
+        android:layout_toLeftOf="@+id/view_line"
+        android:layout_centerVertical="true"
+        android:textColor="@color/text_gray3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.temple">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
+    <!-- <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" /> -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 如果需要精确定位的话请加上此权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 如果需要粗略定位的话请加上此权限 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!--如果设置了target >= 28 如果需要启动后台定位则必须声明这个权限-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+    <!-- Android 11 必须加后台定位权限，否则不会出现始终允许的选项-->
+
+    <application
+        android:name="com.example.temple.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_lanucher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity android:name=".activity.shop.GoodListActivity" />
+        <activity android:name=".activity.shop.ImagePreViewActivity" />
+        <activity android:name=".activity.shop.ShopActivity" />
+        <activity android:name=".activity.shop.ShoopDetailActivity" />
+        <activity android:name=".activity.login.FindPassword" />
+        <activity android:name=".activity.login.UpdatePwdActivity" />
+        <activity android:name=".activity.user.AddAddressActivity" />
+        <activity android:name=".activity.user.AddressListActivity" />
+        <activity android:name=".activity.order.ConfirmOrderActivity" />
+        <activity android:name=".activity.BaseWebActivity" />
+        <activity android:name=".activity.order.LogisticsActivity" />
+        <activity android:name=".activity.order.OrderDetailActivity" />
+        <activity android:name=".activity.shop.RankingListActivity" />
+        <activity android:name=".activity.order.PayResultActivity" />
+        <activity android:name=".activity.user.UserInfoActivity" />
+        <activity android:name=".activity.user.GongXian2Activity" />
+        <activity android:name=".activity.user.TransOutActivity" />
+        <activity android:name=".activity.user.TransDetailActivity" />
+        <activity android:name=".activity.user.InviteFriend" />
+        <activity android:name=".activity.user.MyXZActivity" />
+        <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.user.SettingActivity" />
+        <activity android:name=".activity.order.OrderListActivity" />
+        <activity android:name=".activity.item.MoreLifeActivity" />
+        <activity android:name=".activity.item.GoodMoralityActivity" />
+        <activity android:name=".activity.item.GoodEndingActivity" />
+        <activity android:name=".activity.item.OnLineConnectionActivity" />
+        <activity android:name=".activity.item.RealisticViewActivity" />
+        <activity android:name=".activity.item.OnLineMudiActivity" />
+        <activity android:name=".activity.item.SpiritTabletActivity" />
+        <activity android:name=".activity.item.SpiritTableConfirmOrderActivity" />
+        <activity android:name=".activity.item.GenealogyActivity" />
+        <activity android:name=".activity.item.FamilyHeirloomActivity" />
+        <activity android:name=".activity.item.GenealogyDetailsActivity" />
+        <activity android:name=".activity.item.GenealogyEditDetailsActivity" />
+        <activity android:name=".activity.item.MemberInformationActivity" />
+        <activity android:name=".activity.item.AddMemberActivity" />
+
+
+        <activity android:name=".activity.item.HealthActivity" />
+        <activity android:name=".activity.item.RichActivity" />
+        <activity android:name=".activity.item.OrderTeacherActivity" />
+        <activity android:name=".activity.item.KangYangActivity" />
+        <activity android:name=".activity.item.order.OrderTeacherDetailsActivity" />
+        <activity android:name=".activity.item.order.ReservationInformationActivity" />
+        <activity android:name=".activity.item.order.ReservationOrderSuccessfulActivity" />
+        <activity android:name=".activity.item.order.ReservationSuccessfulActivity" />
+        <activity android:name=".activity.item.order.AdvanceOrderSubmissionActivity" />
+        <activity android:name=".activity.item.order.AppointmentRecordActivity" />
+        <activity android:name=".activity.item.order.ReservedActivity" />
+        <activity android:name=".activity.item.order.ReservationInformationUpdateActivity" />
+        <activity android:name=".activity.item.order.CancelReservationActivity" />
+
+
+        <activity android:name=".activity.item.YaoShanActivity" />
+        <activity android:name=".activity.item.GongFaActivity" />
+        <activity android:name=".activity.item.QiuZiActivity" />
+        <activity android:name=".activity.item.GongfengActivity" />
+        <activity android:name=".activity.item.DetailActivity" />
+        <activity android:name=".activity.item.ChaojingActivity" />
+        <activity android:name=".activity.item.CopyJingshuActivity" />
+        <activity android:name=".activity.item.ZhuangZhongActivity" />
+        <activity android:name=".activity.item.ChouQianActivity" />
+        <activity android:name=".activity.item.MuGuActivity" />
+        <activity android:name=".activity.item.SongJingshuActivity" />
+        <activity android:name=".activity.item.SongJingActivity" />
+        <activity android:name=".activity.message.MessageActivity" />
+        <activity android:name=".activity.memorialplaza.MemorialPlazaActivity" />
+        <activity android:name=".activity.memorialplaza.MemorialPeopleActivity" />
+        <activity
+            android:name=".activity.memorialplaza.MemorialLiuYanActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.memorialplaza.MemorialCeremonyActivity" />
+
+        <activity android:name=".activity.memorialplaza.PlayVideoActivity" />
+        <activity android:name=".activity.memorialplaza.MemorialVideoActivity" />
+        <activity android:name=".activity.memorialplaza.MemorialHallActivity" />
+        <activity android:name=".activity.memorialplaza.CreateActivity" />
+        <activity android:name=".activity.fiveblessings.FiveBlessingsActivity" />
+        <activity android:name=".activity.fiveblessings.BaiJiaXingActivity" />
+        <activity android:name=".activity.fiveblessings.WeddingBanquetActivity" />
+        <activity android:name=".activity.fiveblessings.SurnameSacrificeActivity" />
+        <activity android:name=".activity.fiveblessings.SurnameMemorabiliaActivity" />
+        <activity android:name=".activity.fiveblessings.ContentDetailActivity" />
+        <activity android:name=".activity.fiveblessings.ArticleDetailActivity" />
+        <activity android:name=".activity.fiveblessings.PhotoDetailActivity" />
+        <activity android:name=".activity.fiveblessings.publish.PublishArticleActivity" />
+        <activity android:name=".activity.item.daoli.DaoLiActivity" />
+
+        <activity android:name=".activity.home.LongevityChapterActivity" />
+
+        <activity android:name=".activity.fiveblessings.ScheduleActivity" />
+        <activity android:name=".activity.fiveblessings.AncestralWorshipActivity" />
+        <activity android:name=".activity.fiveblessings.CangjinPavilionActivity" />
+        <activity android:name=".activity.fiveblessings.CangjinStoreyActivity" />
+        <activity android:name=".activity.fiveblessings.ContentScripturesActivity" />
+        <activity android:name=".activity.fiveblessings.HonorHallActivity" />
+        <activity android:name=".activity.fiveblessings.HonorHallRankActivity" />
+        <activity android:name=".activity.fiveblessings.HonorSquareActivity" />
+        <activity android:name=".activity.fiveblessings.HundredSchoolsThoughtActivity" />
+        <activity android:name=".activity.fiveblessings.ZhuZiBaiJiaActivity" />
+        <activity android:name=".activity.fiveblessings.CreateScheduleActivity" />
+        <activity android:name=".activity.fiveblessings.ContentDirectoryActivity" />
+
+
+        <activity android:name=".activity.agent.AgentActivity" />
+        <activity android:name=".activity.agent.AgentSuccessActivity" />
+
+
+        <activity android:name="com.example.temple.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.example.temple.MainActivity"
+            android:launchMode="singleTask" />
+
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"
+                tools:replace="android:resource" />
+        </provider> <!-- autosize 配置屏幕适配参数 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="812" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="d07114a2fe233fef145e75d8ca29ba4f"></meta-data>
+    </application>
+    <queries>
+        <package android:name="com.tencent.mm" />
+    </queries>
+
+</manifest>

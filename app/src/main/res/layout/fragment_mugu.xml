@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF6"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFDF6"
+        android:padding="@dimen/dp_10"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/chenzhong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mugubg"
+                android:scaleType="centerCrop"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/iv_zhuangzhong1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/mugu1"
+                android:scaleType="centerCrop"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/iv_zhuangzhong2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/mugu2"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="0"
+                android:textColor="#6D1B13"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/chenzhong"
+                android:layout_marginBottom="20dp"
+                app:bl_corners_radius="40dp"
+                app:bl_solid_color="#D4C4AA"
+                ></TextView>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="鼓楼晚间报时的鼓声。\n
+引唐王贞白《长安道》诗：“晓鼓人已行，暮鼓人未息。”宋 欧阳修 《和丁宝臣游甘泉寺》：“城头暮鼓休催客，更值横江弄月归。”高云览 《小城春秋》第十六章：“鼓楼上传来暮鼓的声音。”"
+            android:layout_marginTop="10dp"
+            android:textColor="#D12E05"
+            ></TextView>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="累计暮鼓7次"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:textColor="#886860"-->
+<!--            ></TextView>-->
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

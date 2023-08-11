@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/sz_bg" />
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="纪念广场"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="50dp"
+        app:bl_corners_radius="20dp"
+        app:bl_solid_color="@color/white">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/search" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="请输入纪念馆人名进行搜索"
+            android:imeOptions="actionSearch"
+            android:lines="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_good_ending_detail_list" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="20dp"
+            android:padding="15dp"
+            app:bl_corners_radius="12dp"
+            app:bl_solid_color="#D5DEE7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="我的创建"
+                android:textColor="#334B6D"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_to"
+                android:layout_width="67dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="进入"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:bl_corners_radius="12dp"
+                app:bl_solid_color="#334B6D" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

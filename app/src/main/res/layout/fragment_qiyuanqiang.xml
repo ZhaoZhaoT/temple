@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF6"
+    android:orientation="vertical">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_my_collection"
+        app:srlDisableContentWhenRefresh="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_qiyuan_list" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

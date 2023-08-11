@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/deep_white_shallow_radius_twelve"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="14.5dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="预约李毅老师"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="已取消"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#E3E3E3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="预约人"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_op_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="王明"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="预约老师"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="李毅"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="预约时间"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2023-06-12 14:00~11:00"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

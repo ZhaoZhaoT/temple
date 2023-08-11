@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_fillet_corner_yellow_hem_width"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="20dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赵(zhào)"
+            android:textColor="#ff6d1b13"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingBottom="25dp"
+            android:text="【起源】出自赢姓，形成于西周，祖先是伯益，具体始祖是造父。伯益为颖项帝裔孙，被舜赐姓赢。造父为伯益的9世孙，是西周时著名的驾驭马车的能手，他在桃林一带得到8匹骏马，调训好后献给周穆王。周穆王配备了上好的马车，让造父为他驾驶，经常外出打猎、游玩，有一次西行至昆仑山，见到西王母，乐而忘归，而正在这时听到徐国徐偃王造反的消息，周穆王非常着急，在此关键时刻，造父驾车日驰千里，使周穆王迅速返回了镐京，及时发兵打败了徐偃王，平定了叛乱。由于造父立了大功，周穆王便把赵城赐给他，自此以后，造父族就称为赵氏。"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:src="@mipmap/icon_yellow_close" />
+</LinearLayout>

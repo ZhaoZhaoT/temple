@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:bl_corners_radius="8dp"
+        app:bl_solid_color="@color/white"
+        android:layout_marginHorizontal="10dp"
+        >
+        <RelativeLayout
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="33dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="70dp"
+            android:layout_height="70dp">
+            <ImageView
+                android:visibility="visible"
+                android:src="@mipmap/default_head"
+                android:id="@+id/iv_head"
+                android:layout_width="70dp"
+                android:layout_height="70dp"></ImageView>
+
+            <ImageView
+                android:visibility="visible"
+                android:src="@mipmap/camaro"
+                android:layout_alignBottom="@id/iv_head"
+                android:layout_alignRight="@+id/iv_head"
+                android:layout_width="19dp"
+                android:layout_height="19dp"></ImageView>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginHorizontal="11dp"
+            android:background="@color/background"
+            >
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:text="昵称"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:textColor="#333333"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:background="@null"
+                android:id="@+id/tv_nikename"
+                android:text=""
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:layout_marginRight="5dp"
+                android:minWidth="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:visibility="gone"
+                android:src="@mipmap/right_gray"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/tv_save"
+            android:text="保存"
+            android:textSize="18sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            app:bl_corners_radius="21dp"
+            app:bl_solid_color="#C79667"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>

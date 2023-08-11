@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="创建文章"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/gry_fillet_corner"
+            android:gravity="center"
+            android:paddingLeft="18.5dp"
+            android:paddingRight="18.5dp"
+            android:text="预览"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_top"
+        android:background="#F6F6F6"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:paddingTop="18dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="18dp"
+            android:text="点击输入文章标题"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:src="@mipmap/icon_add_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="102dp"
+            android:layout_marginRight="102dp"
+            android:background="@mipmap/icon_add_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingRight="25dp">
+
+            <TextView
+                android:id="@+id/tv_pic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_photo"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="图片"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_wenzi"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="文字"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_video"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_video"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="视频"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

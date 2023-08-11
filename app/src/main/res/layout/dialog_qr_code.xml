@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:bl_corners_radius="6dp"
+    app:bl_solid_color="@color/white"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"
+        app:bl_corners_radius="6dp"
+        app:bl_stroke_color="#6D1B13"
+        app:bl_stroke_width="2dp"
+        >
+        <ImageView
+            android:id="@+id/iv_qr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/jieqian"
+            android:layout_marginTop="20dp"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/tv_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击开始摇签"
+            android:background="@mipmap/chouqianclick"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginVertical="30dp"
+            android:textColor="@color/white"
+            ></TextView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_jieqian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="道观灵签第二十签：风送滕王阁\n【凶吉】上上签\n【宫位】寅宫\n 【签文】自小生在富贵家，眼前万事总是奢华；蒙君赐紫金鱼带，四海传名足可夸。 \n【诗意】囚有逢赦，病即安然，名遍皇宫。 \n【解曰】此签龙门得遇之象，万事皆大吉也。 \n【断事】此签家宅安，自身吉，求财有，交易宜迟，婚姻成，六甲男，行人未回，田蚕利，六畜慎吉，寻人有信，讼吉，移涉守旧，失物见病秋吉，坟吉。 【典故】武吉本来是砍柴的樵夫，认识了在胃水旁钓鱼的姜太公(子牙)。后来进城时误杀了人，被判死刑，武吉求救于姜太公，太公收他为徒弟并施法救他。后来武吉被拜为大将。讨伐纣王。《封神榜》"
+        android:layout_margin="10dp"
+        android:textColor="#6D1B13"
+        android:padding="10dp"
+        app:bl_corners_radius="6dp"
+        app:bl_stroke_color="#6D1B13"
+        app:bl_stroke_width="2dp"
+        android:visibility="gone"
+        ></TextView>
+
+
+
+
+
+
+
+</LinearLayout>

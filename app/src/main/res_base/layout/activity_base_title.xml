@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:background="@color/background"
+        android:id="@+id/base_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"></View>
+    <RelativeLayout
+        android:background="@color/background"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <FrameLayout
+            android:layout_alignParentLeft="true"
+            android:id="@+id/layout_left_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@mipmap/left_back"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/iv_base_back"
+                android:layout_width="10dp"
+                android:layout_height="15dp"/>
+        </FrameLayout>
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:id="@+id/iv_base_right"
+            android:layout_width="17dp"
+            android:layout_height="17dp"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

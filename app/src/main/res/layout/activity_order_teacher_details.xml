@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colors_d4c4aa"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="李毅老师" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="24.5dp"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/deep_yellow_shallow_radius_twelve"
+                    android:orientation="horizontal"
+                    android:paddingTop="70dp"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="预约价格"
+                            android:textColor="#ff999999"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#ffe85b35"
+                            android:textSize="16sp"
+                            tools:text="¥157/次" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="历史预约"
+                            android:textColor="#ff999999"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#ff333333"
+                            android:textSize="16sp"
+                            tools:text="1212" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="评分"
+                            android:textColor="#ff999999"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_mark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            tools:text="4.9分"
+                            android:textColor="#ffff9900"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="60dp"
+                    android:layout_height="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/no_empty_one" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/deep_yellow_shallow_radius_twelve"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="8dp"
+                        android:src="@mipmap/icon_ident" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="老师地址"
+                        android:textColor="#ff000000"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/icon_address"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp"
+                    tools:text="长沙市天心区汇金国际银座1232" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/deep_yellow_shallow_radius_twelve"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="8dp"
+                        android:src="@mipmap/icon_ident" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="老师简介"
+                        android:textColor="#ff000000"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="315dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp"
+                    tools:text="李毅老师简介，介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情内容介绍详情" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_click"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@mipmap/submit_bt"
+                android:gravity="center"
+                android:text="立即预约"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

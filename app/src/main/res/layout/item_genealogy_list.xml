@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/deep_red_shallow_radius_twelve"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingBottom="22.5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_framily_sign"
+            android:textColor="#ff6d1b13"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="我家"
+            android:textColor="#ffffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="家庭成员:3"
+        android:textColor="#ffffffff"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

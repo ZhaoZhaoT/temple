@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="预约记录"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5E0CB"
+        android:paddingLeft="15dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:text="已预约"
+        android:textColor="#ff6d1b13"
+        android:textSize="14sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F6F6F6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="14.5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_teacher_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        tools:text="预约李毅老师"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#E3E3E3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="预约地址"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="长沙市天心区汇金国际银座1232"
+                        android:textColor="#ff000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="联系方式"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_teacher_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="15658990909"
+                        android:textColor="#ff000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="14.5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="预约信息"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#E3E3E3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="预约人"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="王明"
+                        android:textColor="#ff000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="手机号码"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="15658990909"
+                        android:textColor="#ff000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="预约时间"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2023-06-12 14:00"
+                        android:textColor="#ff000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="14.5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="费用信息"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#E3E3E3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="预约价格"
+                        android:textColor="#ff999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥157"
+                        android:textColor="#ffe85b35"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="14.5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="评价"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#E3E3E3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="19dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            style="@style/small_roomRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:isIndicator="false"
+                            android:numStars="5"
+                            android:rating="3.5" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="4.5分"
+                            android:textColor="#ffff9900"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        tools:text="老师很耐心，也很专业！"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="#F6F6F6"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@mipmap/submit_btn"
+            android:gravity="center"
+            android:text="修改信息"
+            android:textColor="#ff6d1b13"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@mipmap/submit_btn"
+            android:gravity="center"
+            android:text="取消预约"
+            android:textColor="#ff6d1b13"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_finish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/chouqianclick"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_delect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/submit_bt_unselect"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_go_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/submit_btn"
+            android:gravity="center"
+            android:text="去评论"
+            android:textColor="#ff6d1b13"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+

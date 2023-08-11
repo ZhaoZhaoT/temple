@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:padding="10dp"
+    app:bl_corners_radius="12dp"
+    app:bl_solid_color="#EEEEEE">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="70dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/no_empty_one" />
+
+    <LinearLayout
+        android:id="@+id/ll_yuan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="袁隆平"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="1930年9月7日-2021年5月22日"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="创建时间:2023年6月22日"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="经文书名"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_book_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        android:layout_margin="15dp"
+        android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@mipmap/word_area"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tv_word"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_top"
+                android:textColor="#886860"
+                android:textSize="16sp"
+                tools:text="天行健，君子以自强不息天行健，君子以自强不息" />
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_book_area"
+        android:layout_marginHorizontal="15dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top"
+            android:background="@mipmap/copy_area">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_top"
+                android:layout_margin="20dp"
+                android:background="@mipmap/write_area">
+
+                <com.github.xch168.stroketextview.StrokeTextView
+                    android:id="@+id/write_word"
+                    android:layout_width="305dp"
+                    android:layout_height="305dp"
+                    android:fontFamily="@font/myfont"
+                    android:gravity="center"
+                    android:text="经"
+                    android:textColor="@color/white"
+                    android:textSize="260sp"
+                    android:textStyle="bold"
+                    app:stroke_color="#FAE2D4"
+                    app:stroke_width="2.5dp" />
+
+                <!--                <com.example.temple.utils.StrokeTextView-->
+                <!--                    android:id="@+id/write_word"-->
+                <!--                    android:layout_width="305dp"-->
+                <!--                    android:layout_height="305dp"-->
+                <!--                    android:text="经"-->
+                <!--                    android:textSize="260sp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:includeFontPadding="false"-->
+                <!--                    android:layout_centerInParent="true"-->
+                <!--                    android:fontFamily="@font/myfont"-->
+                <!--                    android:textColor="@color/white"-->
+                <!--                    ></com.example.temple.utils.StrokeTextView>-->
+                <!--                <com.f1reking.signatureview.SignatureView-->
+                <!--                    android:id="@+id/signatureview"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="305dp"-->
+                <!--                    app:penColor="#3B3A38"-->
+                <!--                    app:penWidth="30"-->
+                <!--                    app:backColor="#00FFFFFF"-->
+                <!--                    />-->
+                <com.example.temple.view.SignatureView
+                    android:id="@+id/signatureview"
+                    android:layout_width="match_parent"
+                    android:layout_height="305dp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+
+            android:layout_weight="1"
+            android:background="@mipmap/submit_btn"
+            android:gravity="center"
+            android:text="清空"
+            android:textColor="#6D1B13"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/submit_bt"
+            android:gravity="center"
+            android:text="下一字"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+</RelativeLayout>

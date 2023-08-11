@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/deep_white_shallow_radius"
+    android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:includeFontPadding="false"
+            android:textColor="#999999"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_top"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="拍摄"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#F6F6F6" />
+
+        <TextView
+            android:id="@+id/tv_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="从手机相册上传"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#F6F6F6" />
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="取消"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+
+
+</LinearLayout>

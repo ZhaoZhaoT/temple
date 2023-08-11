@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        jcenter()
+
+        maven { url 'https://repo1.maven.org/maven2/' }
+
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        maven{
+            url"https://jitpack.io"
+        }
+
+        maven { url 'https://repo1.maven.org/maven2/' }
+        //融云 maven 仓库地址
+        maven {url "https://maven.rongcloud.cn/repository/maven-releases/"}
+
+    }
+//    classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
+}
+
+rootProject.name = "temple"
+include ':app'
+include ':appupdateX'
+include ':lrcView'

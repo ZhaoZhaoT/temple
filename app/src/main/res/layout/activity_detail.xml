@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow"
+                android:layout_width="9dp"
+                android:layout_height="16dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:text="详情"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></VideoView>
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/banner"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            ></ImageView>
+        <ImageView
+            android:id="@+id/iv_start"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/play"
+            android:layout_centerInParent="true"
+            ></ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="20dp"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¥99.99"
+            android:textStyle="bold"
+            android:textColor="#E85B35"
+            android:textSize="20sp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="223人在学"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这里是标题 "
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/money"
+            ></TextView>
+    </RelativeLayout>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/table_order"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        tl:tl_textSelectColor="#3C241E"
+        tl:tl_textUnselectColor="#666666"
+        tl:tl_indicator_color="#3C241E"
+        tl:tl_indicator_height="3dp"
+        tl:tl_indicator_corner_radius="2dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_textBold="SELECT"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textsize="16sp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/order_pager"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.viewpager.widget.ViewPager>
+    
+
+
+</LinearLayout>

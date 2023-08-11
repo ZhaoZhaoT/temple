@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg_gray_white">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="善终"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/temple_background_gradient_bg_gray2"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="纪念广场"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/tv_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="2.5dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="2.5dp"
+                    android:text="查看 >"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:bl_corners_radius="5dp"
+                    app:bl_solid_color="#334B6D" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:layout_below="@+id/tv_chakan"
+                android:layout_marginBottom="20dp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:overScrollMode="never"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_good_ending_list" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_zone"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="-12dp">
+
+        <LinearLayout
+            android:id="@+id/lin_online_connection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="12dp"
+            app:bl_solid_color="#E5F1EC">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线连接"
+                android:textColor="#3D8766"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_connect"
+                    android:text="连接 >"
+                    android:textColor="#76B9AA"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_connect"
+                    android:layout_width="50dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/connect" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_family"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:bl_corners_radius="12dp"
+            app:bl_solid_color="#F8EBE9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="传家宝"
+                android:textColor="#BD4B3C"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_family_heirloom"
+                    android:text="添加 >"
+                    android:textColor="#F08572"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_family_heirloom"
+                    android:layout_width="50dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/chuanjiabao"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

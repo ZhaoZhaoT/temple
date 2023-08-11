@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:banner="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF6">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@mipmap/qiyuan_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_toptext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text=""
+                android:textColor="#e6333333"
+                android:textSize="14sp" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_margin="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#F0F0F0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <WebView
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F0F0F0" />
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/image1"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="160dp"-->
+                    <!--                        android:src="@mipmap/gongdeng"-->
+                    <!--                        android:scaleType="centerCrop"-->
+                    <!--                        android:layout_marginHorizontal="15dp"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        ></ImageView>-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/tv_dec_one"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginHorizontal="15dp"-->
+                    <!--                        android:textColor="#e6333333"-->
+                    <!--                        android:textSize="14sp"-->
+                    <!--                        android:layout_marginTop="15dp"-->
+                    <!--                        android:text="道教认为，灯能“上照诸天，下照诸地，八方九夜，并见光明”。因此，灯既可以用来赞颂天神，祈求赐福延生，也可以用来照幽破狱，祈求度亡升仙，是上乘的一种功德。\n\n-->
+                    <!--《洞玄灵宝道学科仪》卷下篇云：“阴者拨度亡魂、照彻幽暗、使罪魂苦魄，都随慧光接引，皈依正道，超升渺渺仙源……，阳者消灾度厄、安神却祸、制魄、除邪、改运延生……”。\n\n-->
+                    <!--同时，灯也象征着智慧和光明。所以，道教所供之灯，其实就是智慧、光明于人世间的一种演化形态。道教认为每个人生下来，都是秉受天上星辰之气的，所以民间有“天上一颗星，地上一个人”的说法。所以我们每个人的运气，其实和天上自己本命星有非常紧密的关系。例如诸葛亮用七星灯续命，以及我们经常说的某某人吉星高照，某人灯尽油枯，其意义就是这个道理。\n\n-->
+                    <!--如果在祖师仙真的大殿，点上对应的光明灯，能使本命星辰更加明亮，并且可得到祖师爷的法力加持，自己的运气也会逐渐好起来。\n\n-->
+                    <!--在《太上修真录》中，有部经叫《真元行经》，里面宣讲了供灯修行，在道教中的十种功德：\n\n-->
+                    <!--1、照世如灯，供灯者生生世世如同世间的明灯，就像道门如意宝一样，慧灯照亮整个世界。\n\n-->
+                    <!--2、肉眼不坏，供灯者肉眼非常明亮，不容易得眼类疾病。\n\n-->
+                    <!--3、得于天眼，供灯者将来有可能会修得五眼中的天眼。\n\n-->
+                    <!--4、善恶智能，能辨别善法和恶法，懂得一切因果取舍。\n\n-->
+                    <!--5、灭除大暗，具有超胜的智慧，能灭除自他相续中的一切愚痴黑暗。\n\n-->
+                    <!--6、得智能明，自己的智慧超群众人，不受外界的各种诱惑，有辨别取舍的能力。\n\n-->
+                    <!--7、不在暗处，生生世世不会转生在邪见或者黑暗的地方，住于光明的殊胜之地。\n\n-->
+                    <!--8、具大福报，转生为具有大福报的众生。\n\n-->
+                    <!--9、命终生天，命终后不会堕入恶趣，而会转生天界。其他经典中也说，长期供灯的人不会生于恶趣，而是上生天趣，即使投生人间，也生于高贵种族的家庭中，不会生在具邪见者的家里。\n\n-->
+                    <!--10、盟证道果。很快的时间中能证得十方道岸的果位。\n\n-->
+
+                    <!--1、三清灯\n\n-->
+                    <!--道教最高神三清祖师。保佑善信，福星高照，如意吉祥\n\n-->
+                    <!--2、三官灯\n\n-->
+                    <!--天、地、水三官大帝，保佑善信，消灾解厄，增福延寿\n\n-->
+                    <!--2、财神灯\n\n-->
+                    <!--正财神赵公明元帅。保佑善信，财运顺畅，事业发展\n\n-->
+                    <!--3、药王灯\n\n-->
+                    <!--药王孙思邈祖师。保佑善信，身心健康，却病延年\n\n-->
+                    <!--4、文昌灯\n\n-->
+                    <!--文昌帝君。保佑善信，学业进步，仕途顺畅\n\n-->
+                    <!--5、太岁灯\n\n-->
+                    <!--六十甲子太岁爷。保佑善信，流年顺利，事业亨通\n\n-->
+                    <!--6、月老灯\n\n-->
+                    <!--月老仙师。保佑善信，姻缘和合，家庭幸福\n\n-->
+                    <!--7、慈航灯\n\n-->
+                    <!--慈航道人。保佑善信，人丁兴旺，事事平安\n\n-->
+                    <!--8、财神灯\n\n-->
+                    <!--正财神赵公明元帅。保佑善信，财运顺畅，事业发展\n\n-->
+                    <!--9、车神灯\n\n-->
+                    <!--车神奚仲仙师。保佑善信，行车安全，除危解厄\n\n-->
+                    <!--供灯三至七日有神兆感应，四十九天为小圆满，一百天为中圆满，一年（视具体情况而定）为大圆满。\n\n-->
+                    <!--诵经保平安 燃灯增福寿！"-->
+                    <!--                        ></TextView>-->
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/gongdeng1"/>
+
+                <TextView
+                    android:id="@+id/tv_lamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_logo"
+                    android:text="已有0位善信供奉"/>
+
+                <TextView
+                    android:id="@+id/tv_gongfeng1"
+                    android:layout_width="85dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/gongfeng_bg"
+                    android:gravity="center"
+                    android:text="点此供奉"
+                    android:textColor="#3C241E"
+                    android:textSize="14sp"></TextView>
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_margin="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#F0F0F0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <WebView
+                        android:id="@+id/view_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F0F0F0" />
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/image2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="160dp"-->
+<!--                        android:layout_marginHorizontal="15dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@mipmap/gongshenpai"></ImageView>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="15dp"-->
+<!--                        android:layout_marginTop="15dp"-->
+<!--                        android:text="清·曹雪芹《红楼梦·第七十二回》：“我的病好之后，把你立个长生牌位，我天天焚香礼拜，保佑你一生福寿双全......\n\n”-->
+<!--很多人不明白为什么要供奉长生禄位，其中有两个重要的意义。\n\n-->
+<!--首先增加福德福报。我们常说“厚德载物”，一个人能不能完成一个目标，最重要的是，是否有足够的福德，因为厚德方可载物，你的福德决定了这个目标的成果最后是否会属于你。福德不足的人，人生中会有很多障碍，轻者如感情、工作中的诸多不顺，重者会出现各种疾病及意外伤灾。供奉长生禄位，其实是增加我们生命中的福德福报，以改变和提升我们的运势，此乃命运转变的基础。\n\n-->
+<!--其次，在道教宫观中殿内摆放长生禄位，其大多被安置在神明两侧，凡长生禄位册上有名者，每日接受早晚烧香诵经供奉，祖师及诸神明加持护佑，为此人消灾延寿，增福增慧，解怨释结，积功积德；并引日月星三光下照，招来禄马贵人加临，其中更有借用天时转运的讲究。\n\n-->
+<!--《高上玉皇心印妙经》云：上药三品，神与气精。修补禄位，便是修补人之根基，消灾延寿之基础。也可称之为“小种生基”。从易学角度而言，《滴天髓》云：干多不如支重，干为气，支为势。干上有气，支下有势，可论有气有力，精气神足。因此常人补禄，便是精壮自己的精气神。自然百邪不侵，寿久福长。\n\n-->
+<!--在斗科里面，禄位又被叫做朝真礼斗牌位。上由南北二斗星君环绕，可趋吉避凶、斗转星移，转换运势，化解星君冲煞；下有禄马保命，贵人扶持，增强运势，免受行煞之厄。\n\n-->
+<!--所以纵观世间法中，禄位有损者、身体孱弱者、运势不佳者，遭无妄之灾者等等，屡见不鲜。而立长生禄位牌，则是修复上述问题的法门之一。正所谓：禄马扶持临贵人，全年诵经保平安。\n\n-->
+<!--人道中，无禄或禄位有损的，占了绝大多数。而修补，立长生禄位，其实也是人人可做的，是百利而无一害的。\n\n"-->
+<!--                        android:textColor="#e6333333"-->
+<!--                        android:textSize="14sp"></TextView>-->
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <ImageView
+                    android:id="@+id/iv_logo1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/gongshen"/>
+
+                <TextView
+                    android:id="@+id/tv_god"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_logo1"
+                    android:text="已有0位善信供奉"/>
+
+                <TextView
+                    android:id="@+id/tv_gongfeng2"
+                    android:layout_width="85dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/gongfeng_bg"
+                    android:gravity="center"
+                    android:text="点此供奉"
+                    android:textColor="#3C241E"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F1EBD8">
+
+        <ImageView
+            android:id="@+id/iv_gongdeng"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="53dp"
+            android:src="@mipmap/gongdeng1"/>
+
+        <TextView
+            android:id="@+id/tv_lamp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_gongdeng"
+            android:text="供灯   0"
+            android:textColor="#6D1B13"
+            android:textSize="14sp"/>
+
+
+        <TextView
+            android:id="@+id/tv_god2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="53dp"
+            android:text="供神   0"
+            android:textColor="#6D1B13"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toLeftOf="@+id/tv_god2"
+            android:src="@mipmap/gongshen"></ImageView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

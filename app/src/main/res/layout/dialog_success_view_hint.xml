@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="480dp"
+    android:background="@mipmap/all_sur_name_bg"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    tools:ignore="MissingDefaultResource">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="特点与症状:
+湿热质的人湿热内蕴，以面垢油光、口苦、苔黄腻等湿热表现为主要特征。常表现为面垢油光，易生痤疮，口苦口干，身重困倦，大便黏滞不畅或燥结，小便短黄，男性易阴囊潮湿，女性易带下增多，舌质偏红，苔黄腻，脉滑数。
+性格:湿热质的人容易心烦急躁。"
+            android:textColor="#ff6d1b13"
+            android:textSize="18sp" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <TextView
+        android:id="@+id/tv_affrim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@mipmap/submit_btn"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#6D1B13"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
+
+

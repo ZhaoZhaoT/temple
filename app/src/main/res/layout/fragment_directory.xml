@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:banner="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                app:bl_corners_radius="12dp"
+                app:bl_solid_color="#F6F6F6"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01. 第一章标题"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    ></TextView>
+                
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/lock"
+                    android:layout_alignParentRight="true"
+                    ></ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                app:bl_corners_radius="12dp"
+                app:bl_solid_color="#F6F6F6"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02. 第二章标题"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/lock"
+                    android:layout_alignParentRight="true"
+                    ></ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                app:bl_corners_radius="12dp"
+                app:bl_solid_color="#F6F6F6"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03. 第三章标题"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/lock"
+                    android:layout_alignParentRight="true"
+                    ></ImageView>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

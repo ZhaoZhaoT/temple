@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#101010"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/write_back" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_picture"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="相册"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_video"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="视频"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_liuyan"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="留言"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_jidian"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/bt_bg"
+            android:gravity="center"
+            android:text="祭奠"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_button"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingHorizontal="10dp"
+        app:bl_corners_radius="30dp"
+        app:bl_solid_color="#424242">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/jinianbg" />
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/pic0" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="袁隆平"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="1930年9月7日-2021年5月22日"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="袁隆平(1930年9月7日-2021年5月22日)，男，汉族，生于北京，无党派人士，江西省九江市德安县人。享誉海内的著名农业科学家，中国杂交水稻事业的开创者和领导者中国共产党的亲密朋友，无党派人士的杰出代表，“共和国勋章”获得者，湖南省政协原副主席，国家杂交水稻工程技术研究中心原主任，中国工程院院士，被誉为“杂交水稻之父”1953年毕业于西南农学院，1995年被选为中国工程院院士,1999年中国科学院北京天文台施密特CCD小行星项目组发现的一颗小行星被命名为袁隆平星，2000年获得国家最高科学技术奖，2004年获得沃尔夫农业奖，2006年4月当院授子袁隆平改革先锋称号，颁授改革先锋奖章，获评杂交水稻研究的开创者。"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

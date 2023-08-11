@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_gx_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/tv_gx_month"
+            android:textSize="16sp"
+            android:layout_marginVertical="20dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_chaxun"
+            style="@style/commStyle"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_add"
+            android:layout_centerVertical="true"
+            android:text="查询"
+            android:textSize="15sp" />
+    </RelativeLayout>
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlDisableContentWhenRefresh="true">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rView"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

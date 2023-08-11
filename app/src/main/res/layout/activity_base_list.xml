@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:background="@color/background"
+        android:id="@+id/base_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"></View>
+    <RelativeLayout
+        android:background="@color/background"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <FrameLayout
+            android:layout_alignParentLeft="true"
+            android:id="@+id/layout_left_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@mipmap/left_back"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="17dp"
+                android:id="@+id/iv_base_back"
+                android:layout_width="10dp"
+                android:layout_height="15dp"/>
+        </FrameLayout>
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </RelativeLayout>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlDisableContentWhenRefresh="true">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rView"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

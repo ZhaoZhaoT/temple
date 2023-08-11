@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg_gray"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_top"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow"
+                android:layout_width="9dp"
+                android:layout_height="16dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:text="纪念馆"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D5DEE7"
+        android:layout_below="@+id/rl_top"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="免费创建"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:id="@+id/create"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/plus"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        app:bl_corners_radius="12dp"
+        app:bl_solid_color="#EEEEEE"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:src="@mipmap/quyuan" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="屈原"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="审核中"
+                        android:textSize="14sp"
+                        android:textColor="#68B0F2"
+                        android:layout_alignParentRight="true"
+                        ></TextView>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="约公元前340年—公元前278年"
+                    android:textSize="12sp"
+                    android:textColor="#999999"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创建时间:2023年6月22日"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="24dp"
+                    ></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

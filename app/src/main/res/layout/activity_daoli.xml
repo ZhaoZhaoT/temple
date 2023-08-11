@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EBD8"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/icon_daoli_top" />
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_daoli_top_right" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_above="@+id/lin_bg"
+        android:background="#FFFDF6" />
+
+    <LinearLayout
+        android:id="@+id/lin_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#FFFDF6"
+        android:gravity="right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top"
+            android:src="@mipmap/bg_daoli_niao" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lin_top"
+        android:layout_marginTop="22dp"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/deep_gry_clear_yellow_radius_fifteen"
+            android:orientation="horizontal"
+            android:paddingTop="17.5dp"
+            android:paddingBottom="15.5dp">
+
+            <TextView
+                android:id="@+id/tv_last_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="&lt; "
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2023 - 06"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/next_last_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text=" &#62;"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+
+        <com.haibin.calendarview.CalendarLayout
+            android:id="@+id/calendarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:calendar_content_view_id="@+id/calendar_line_layout"
+            app:default_status="expand">
+            <!--           app:default_status="shrink"-->
+
+            <com.haibin.calendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                app:calendar_height="50dp"
+                app:current_day_lunar_text_color="#9DA7AC"
+                app:current_day_text_color="#2C3239"
+                app:current_month_lunar_text_color="#9DA7AC"
+                app:current_month_text_color="#2C3239"
+                app:day_text_size="14sp"
+                app:lunar_text_size="11sp"
+                app:max_year="2099"
+                app:min_year="1910"
+                app:month_view="com.example.temple.view.CustomMonthThereView"
+                app:month_view_show_mode="mode_fix"
+                app:other_month_lunar_text_color="#9DA7AC"
+                app:other_month_text_color="#9DA7AC"
+                app:scheme_lunar_text_color="#ffffff"
+                app:scheme_month_text_color="#2C3239"
+                app:scheme_text=" "
+                app:scheme_text_color="#2C3239"
+                app:scheme_theme_color="#FFAD28"
+                app:selected_lunar_text_color="#6D1B13"
+                app:selected_text_color="#6D1B13"
+                app:selected_theme_color="#6D1B13"
+                app:week_background="#FFFDF6"
+                app:week_bar_height="25dp"
+                app:week_start_with="sun"
+                app:week_text_color="#333333"
+                app:week_text_size="12sp"
+                app:week_view="com.example.temple.view.CustomWeekThereView"
+                app:year_view_day_text_color="#2C3239"
+                app:year_view_day_text_size="9sp"
+                app:year_view_month_text_color="#2C3239"
+                app:year_view_month_text_size="12sp"
+                app:year_view_scheme_color="#FFAD28" />
+
+
+            <com.example.temple.view.CalendarLinearLayout
+                android:id="@+id/calendar_line_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background="#F1EBD8" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background=" @drawable/deep_gry_clear_yellow_down_radius_fifteen" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="92dp"
+                    android:paddingTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="#F1EBD8">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/daoli_jinri"/>
+                </LinearLayout>
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="92dp"-->
+<!--                    android:background="#F1EBD8" />-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:background="@drawable/deep_gry_clear_red_radius_fifteen"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2023/7/26 星期二"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_nongli"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        tools:text="六月初九"
+                        android:textColor="#ff712017"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFDF6"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="10dp"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_daoli_list" />
+                </LinearLayout>
+
+
+            </com.example.temple.view.CalendarLinearLayout>
+        </com.haibin.calendarview.CalendarLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        android:src="@mipmap/icon_daoli_top_left" />
+
+
+</RelativeLayout>

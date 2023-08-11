@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#101624</color>
+    <color name="main_black">#000000</color>
+    <color name="main_black2">#33000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="background">#F6F6F6</color>
+    <color name="line_color">#F4F5F7</color>
+    <color name="text_gray">#999999</color>
+    <color name="text_yellow">#F7C856</color>
+    <color name="text_green">#05B683</color>
+    <color name="text_gray333">#333333</color>
+    <color name="text_grayaaa">#AAAAAA</color>
+    <color name="text_gray2">#888888</color>
+    <color name="text_gray3">#464646</color>
+    <color name="text_gray4">#878C9A</color>
+    <color name="text_gray5">#CCCCCC</color>
+    <color name="text_gray6">#907164</color>
+
+    <color name="text_main">#72B64A</color>
+    <color name="text_main2">#76341A</color>
+    <color name="dark_green">#357D0C</color>
+    <color name="back1">#555555</color>
+    <color name="red">#DD3A22</color>
+    <color name="tabcolor">#C89667</color>
+
+
+    <color name="solid_gray">#F6F6F9</color>
+    <color name="gray_bg">#F6F7FA</color>
+    <color name="word_stock">#FAE2D4</color>
+
+    <color name="colors_6D1B13">#6D1B13</color>
+    <color name="colors_d4c4aa">#D4C4AA</color>
+
+    <color name="colors_d12e05">#ffd12e05</color>
+
+</resources>

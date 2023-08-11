@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/temple_background_gradient_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="功法"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/table_order"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_top"
+        android:layout_gravity="center_horizontal"
+        tl:tl_indicator_color="#3C241E"
+        tl:tl_indicator_corner_radius="2dp"
+        tl:tl_indicator_height="3dp"
+        tl:tl_indicator_margin_right="5dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_tab_space_equal="true"
+        tl:tl_tab_width="100dp"
+        tl:tl_textBold="SELECT"
+        tl:tl_textSelectColor="#3C241E"
+        tl:tl_textUnselectColor="#666666"
+        tl:tl_textsize="14sp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/order_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table_order"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>

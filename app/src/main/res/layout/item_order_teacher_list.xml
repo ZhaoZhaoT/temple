@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/deep_yellow_radius_twelve"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/no_empty_one" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_nikename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                tools:text="李毅老师" />
+
+            <TextView
+                android:id="@+id/tv_mark"
+                android:layout_width="82dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/red_fillet_corner"
+                android:gravity="center"
+                android:text="评分 4.9分"
+                android:textColor="#ffffffff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            tools:text="易学大师关门弟子\n擅长传统易学" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21.5dp">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#E85B35"
+                android:textSize="12sp"
+                tools:text="¥157/次" />
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                tools:text="预约: 1212次" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:bl_corners_radius="8dp"
+    app:bl_solid_color="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        tools:text="观看学习视频消耗学习积分"
+        android:id="@+id/tv_title"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#333333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        tools:text="2022-12-02 15:59:47"
+        android:id="@+id/tv_time"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="12sp"
+        android:textColor="#AAAAAA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    
+    <ImageView
+        android:id="@+id/iv_type"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        ></ImageView>
+
+    <TextView
+        tools:text="-60.00"
+        android:id="@+id/tv_cost"
+        android:layout_toLeftOf="@+id/iv_type"
+        android:textSize="15sp"
+        android:textColor="#222222"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

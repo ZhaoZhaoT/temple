@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:paddingLeft="15dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back_arrow" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/line_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="11dp"
+                android:paddingTop="4dp"
+                android:paddingRight="11dp"
+                android:paddingBottom="4dp"
+                android:text="完成"
+                android:textColor="#ff334b6d"
+                android:textSize="14sp"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="#D5DEE7" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/line_delect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/line_finish"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="11dp"
+                android:paddingTop="4dp"
+                android:paddingRight="11dp"
+                android:paddingBottom="4dp"
+                android:text="删除"
+                android:textColor="#ff334b6d"
+                android:textSize="14sp"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="#D5DEE7" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/deep_red_shallow_radius_twelve"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/icon_framily_sign"
+                        android:textColor="#ff6d1b13"
+                        android:textSize="14sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:paddingTop="20dp"
+                            android:text="我家"
+                            android:textColor="#ffffffff"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="155dp"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/white" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="家庭成员:2 "
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlDisableContentWhenRefresh="true">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_genealogy_details_list" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</RelativeLayout>

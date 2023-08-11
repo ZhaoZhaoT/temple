@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/zhenren_bg" />
+
+    <ImageView
+        android:id="@+id/view_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:src="@mipmap/icon_realistis" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/view_realistis_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="45dp"
+        android:padding="15dp"
+        android:src="@mipmap/icon_realistis_arrow" />
+
+    <ImageView
+        android:id="@+id/view_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:src="@mipmap/icon_back" />
+
+    <LinearLayout
+        android:id="@+id/layout_dec_view"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/view_dec"
+        android:layout_marginTop="35dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <com.example.temple.view.VerticalTextView
+            android:id="@+id/view_dec_view"
+            android:layout_width="wrap_content"
+            android:layout_height="312dp"
+            android:textColor="#ff333333"
+            android:padding="15dp"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="14sp"
+            android:text="入庙为尊—庙，是指宫观庙宇，在古代只有为我们民族做过贡献和立过大功德的人，过逝后才能在庙宇里记功立牌，得到后人的尊敬、供奉和祭拜，并将他们的功德和智慧传承下去。(凡为修建道观庙宇做出贡献者将刻入功德碑，并设神位，受永久香火供奉，福泽世代 )"
+            android:background="@mipmap/icon_dec_view"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

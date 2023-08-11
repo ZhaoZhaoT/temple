@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFDF6"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFDF6"
+        android:padding="@dimen/dp_10"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/chouqianbg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/chouqianbg"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="100dp"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/iv_zhuangzhong1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/chouqian"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/chouqianbg"
+                ></ImageView>
+            <ImageView
+                android:id="@+id/iv_zhuangzhong2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/chouqian2"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/chouqianbg"
+                android:visibility="invisible"
+                ></ImageView>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击开始摇签"
+            android:background="@mipmap/chouqianclick"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            ></TextView>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

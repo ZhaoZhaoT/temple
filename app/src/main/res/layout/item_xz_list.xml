@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:bl_corners_radius="8dp"
+    app:bl_solid_color="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10">
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@mipmap/default_head"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_nikename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户の994040"
+                android:textColor="#333333"
+                android:textSize="15sp"
+                ></TextView>
+            <TextView
+                android:id="@+id/user_level"
+                android:layout_width="32dp"
+                android:layout_height="15dp"
+                android:text="游客"
+                android:textColor="#ffffff"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:background="@drawable/yk_bg"
+                android:layout_marginLeft="6dp"
+                ></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="注册时间：2021-12-28 12:23"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:textSize="14sp"
+                android:textColor="#AAAAAA"
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18153692695"
+                android:layout_marginLeft="6dp"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="累积功德"
+                android:textSize="14sp"
+                android:textColor="#AAAAAA"
+                android:layout_marginLeft="25dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_gongde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2365978"
+                android:layout_marginLeft="6dp"
+                android:textSize="14sp"
+                android:textColor="#C89768"
+                ></TextView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
