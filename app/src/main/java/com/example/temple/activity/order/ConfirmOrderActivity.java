@@ -58,7 +58,6 @@ import rxhttp.wrapper.param.RxHttp;
 public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
 
-
     @BindView(R.id.tv_choose_title)
     TextView tvChooseTitle;
     @BindView(R.id.tv_choose_address)
@@ -111,7 +110,7 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
     ImageView ivChooseAddress;
 
     private ConfirmOrderAdapter mAdapter;
-    private int addressId,buyNumber;
+    private int addressId, buyNumber;
     private ShoopDetailBean detailBean;
     private ShoopDetailBean.SpecVOBean specVOBean;
     private DecimalFormat df = new DecimalFormat("#0.00");
@@ -119,7 +118,7 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
     private String mPayType;
 
     private NewAddressBean.ContentBean mAddress;
-    private String resource="";
+    private String resource = "";
     private boolean open = false;
 
 
@@ -137,34 +136,35 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
 
         rView1.setVisibility(View.GONE);
         rlOne.setVisibility(View.VISIBLE);
-        detailBean= (ShoopDetailBean) getIntent().getSerializableExtra("bean");
-        specVOBean= (ShoopDetailBean.SpecVOBean) getIntent().getSerializableExtra("spec");
-        buyNumber=getIntent().getIntExtra("buyCount",0);
+        detailBean = (ShoopDetailBean) getIntent().getSerializableExtra("bean");
+        specVOBean = (ShoopDetailBean.SpecVOBean) getIntent().getSerializableExtra("spec");
+        buyNumber = getIntent().getIntExtra("buyCount", 0);
 
         tvProductTile.setText(detailBean.getName());
-        tvPrice.setText("¥"+specVOBean.getPrice());
-        tvSize.setText("规格: "+specVOBean.getSpecName());
-        tvChooseNumber.setText("X"+buyNumber);
-        GlideUtils.loadRoundCircleImage(mContext, specVOBean.getSpecCover(),ivPicture,4);
+        tvPrice.setText("¥" + specVOBean.getPrice());
+        tvSize.setText("规格: " + specVOBean.getSpecName());
+        tvChooseNumber.setText("X" + buyNumber);
+        GlideUtils.loadRoundCircleImage(mContext, specVOBean.getSpecCover(), ivPicture, 4);
 
-        mTotalPrice=specVOBean.getPrice()*buyNumber;
+        mTotalPrice = Double.parseDouble(specVOBean.getPrice()) * buyNumber;
 
         BigDecimal bigDecimal = new BigDecimal(mTotalPrice).setScale(2, RoundingMode.HALF_UP);
-        mTotalPrice=bigDecimal.doubleValue();
-
-        tvTotalPrice.setText("¥"+mTotalPrice);
-
-        checkMap.put("goodSpecId",specVOBean.getGoodSpecId());
-        resource=detailBean.getSource();
+        mTotalPrice = bigDecimal.doubleValue();
+        BigDecimal noZeros = bigDecimal.stripTrailingZeros();
+        String result = noZeros.toPlainString();
+        tvTotalPrice.setText("¥" + result);
 
 
+        checkMap.put("goodSpecId", specVOBean.getGoodSpecId());
+        resource = detailBean.getSource();
 
-        mPayType="WX";
 
-        mAddress= (NewAddressBean.ContentBean) getIntent().getSerializableExtra("address");
-        if(mAddress!=null){
+        mPayType = "WX";
+
+        mAddress = (NewAddressBean.ContentBean) getIntent().getSerializableExtra("address");
+        if (mAddress != null) {
             initAddress(mAddress);
-        }else{
+        } else {
             getList();
         }
 
@@ -200,7 +200,7 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
     }
 
     protected void getList() {
-        showWaitDialog("",true);
+        showWaitDialog("", true);
         RxHttp.get(Comments.ADDRESS_LIST)
                 .add("page", 0)
                 .add("size", 2)
@@ -216,14 +216,14 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
     }
 
     protected void buyNow() {
-        showWaitDialog("",false);
+        showWaitDialog("", false);
         RxHttp.postJson(Comments.TAKE_ORDER)
                 .add("addressId", addressId)
                 .add("buyNumber", buyNumber)
-                .add("goodId",detailBean.getId())
-                .add("goodSpecId",specVOBean.getId())
-                .add("remark",etRemark.getText().toString())
-                .add("payType",mPayType)
+                .add("goodId", detailBean.getId())
+                .add("goodSpecId", specVOBean.getId())
+                .add("remark", etRemark.getText().toString())
+                .add("payType", mPayType)
                 .asResponse(String.class)
                 .to(RxLife.toMain(this))
                 .subscribe(model -> {
@@ -235,15 +235,15 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
                 });
     }
 
-    private List<Integer> ids=new ArrayList<>();
+    private List<Integer> ids = new ArrayList<>();
 
     protected void carBuyNow() {
-        showWaitDialog("",false);
+        showWaitDialog("", false);
         RxHttp.postJson(Comments.CAR_ORDER)
                 .add("addressId", addressId)
                 .add("cartIds", ids)
-                .add("payType",mPayType)
-                .add("remark",etRemark.getText().toString())
+                .add("payType", mPayType)
+                .add("remark", etRemark.getText().toString())
                 .asResponse(String.class)
                 .to(RxLife.toMain(this))
                 .subscribe(model -> {
@@ -273,47 +273,48 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
            /* ToastUtils.showShort("订单已提交");
             startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index",1));*/
 //            JsonObject object=new JsonObject((String)re_data);
-           if(mPayType.equals("WX")){
-               startWxPay((String) re_data);
-           }else if(mPayType.equals("ZFB")){
-               startAlipay((String) re_data);
-           }else if(mPayType.equals("WX_MINI")) {
+            if (mPayType.equals("WX")) {
+                startWxPay((String) re_data);
+            } else if (mPayType.equals("ZFB")) {
+                startAlipay((String) re_data);
+            } else if (mPayType.equals("WX_MINI")) {
 //               BaseUtils.startWXMini(this,(String) re_data);
-           }
+            }
 
         } else if (reqcode == 3000) {
            /* ToastUtils.showShort("订单已提交");
             startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index",1));*/
-            if(mPayType.equals("WX")){
+            if (mPayType.equals("WX")) {
                 startWxPay((String) re_data);
-            }else if(mPayType.equals("ZFB")){
+            } else if (mPayType.equals("ZFB")) {
                 startAlipay((String) re_data);
-            }else if(mPayType.equals("WX_MINI")) {
+            } else if (mPayType.equals("WX_MINI")) {
 //                BaseUtils.startWXMini(this,(String) re_data);
             }
             EventBusUtils.post(Comments.ON_CAR);
 
         } else if (reqcode == 4000) {
             ToastUtils.showShort("兑换成功");
-            startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index",2));
-        } else if(reqcode==5000){
+            startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index", 2));
+        } else if (reqcode == 5000) {
             onPay();
         }
     }
 
-    private Map checkMap=new HashMap();
+    private Map checkMap = new HashMap();
+
     private void initAddress(NewAddressBean.ContentBean bean) {
         tvChooseAddress.setText(bean.getAll());
         tvReciverName.setText(bean.getName());
         tvReciverPhone.setText(bean.getPhone());
-        addressId= bean.getId();
+        addressId = bean.getId();
 
         checkMap.put("province", bean.getProvince());
         checkMap.put("city", bean.getCity());
         checkMap.put("area", bean.getArea());
         checkMap.put("street", bean.getDetail());
         checkMap.put("description", bean.getDetail());
-        checkMap.put("number",buyNumber);
+        checkMap.put("number", buyNumber);
         checkMap.put("consignee", bean.getName());
         checkMap.put("phone", bean.getPhone());
 
@@ -327,15 +328,16 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
         if (b == true) {
             if (compoundButton.getId() == R.id.ck_agree1) {
                 ck_agree2.setChecked(false);
-                mPayType ="WX";
-            }if (compoundButton.getId() == R.id.ck_agree2) {
+                mPayType = "WX";
+            }
+            if (compoundButton.getId() == R.id.ck_agree2) {
                 ck_agree1.setChecked(false);
-                mPayType ="ZFB";
+                mPayType = "ZFB";
             }
 
-        }else{
+        } else {
             if (compoundButton.getId() == R.id.ck_agree1) {
-                mPayType ="";
+                mPayType = "";
             }
         }
     }
@@ -343,55 +345,56 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.tv_submit_order) {
-            if(addressId==0){
+            if (addressId == 0) {
                 ToastUtils.showShort("请选择地址!");
-            }else{
-                if(TextUtils.isEmpty(mPayType)){
+            } else {
+                if (TextUtils.isEmpty(mPayType)) {
                     ToastUtils.showShort("请选择支付方式!");
                     return;
                 }
                 onPay();
             }
 
-        }else if(view.getId()==R.id.rl_choose_address){
-            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type",1),Comments.TO_ADDRESS);
-        }else if(view.getId()==R.id.ll_add_address){
-            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type",1),Comments.TO_ADDRESS);
+        } else if (view.getId() == R.id.rl_choose_address) {
+            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type", 1), Comments.TO_ADDRESS);
+        } else if (view.getId() == R.id.ll_add_address) {
+            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type", 1), Comments.TO_ADDRESS);
         }
     }
 
-    public void onPay(){
-        if(detailBean!=null){
+    public void onPay() {
+        if (detailBean != null) {
             buyNow();
-        }else{
+        } else {
             carBuyNow();
         }
-        BaseApplication.payMoney=mTotalPrice;
+        BaseApplication.payMoney = mTotalPrice;
     }
 
 
     private boolean isUpdate;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK){
-            if(requestCode==Comments.TO_ADDRESS&&data!=null){
-                NewAddressBean.ContentBean bean= (NewAddressBean.ContentBean) data.getSerializableExtra("bean");
+        if (resultCode == RESULT_OK) {
+            if (requestCode == Comments.TO_ADDRESS && data != null) {
+                NewAddressBean.ContentBean bean = (NewAddressBean.ContentBean) data.getSerializableExtra("bean");
                 initAddress(bean);
-                isUpdate=true;
-            }else if(data!=null){
-                int code=data.getIntExtra("payResult",0);
-                Log.i("test","code: "+code);
+                isUpdate = true;
+            } else if (data != null) {
+                int code = data.getIntExtra("payResult", 0);
+                Log.i("test", "code: " + code);
             }
         }
     }
 
 
-    public void startWxPay(String json){
+    public void startWxPay(String json) {
         PayReq req = new PayReq();
         req.appId = MyThirdDelegate.WX_APP_ID;// 微信开放平台审核通过的应用APPID
         try {
-            JSONObject jsonObject=new JSONObject(json);
+            JSONObject jsonObject = new JSONObject(json);
             req.partnerId = jsonObject.getString("partnerid");// 微信支付分配的商户号
             req.prepayId = jsonObject.getString("prepayid");// 预支付订单号，app服务器调用“统一下单”接口获取
             req.nonceStr = jsonObject.getString("noncestr");// 随机字符串，不长于32位，服务器小哥会给咱生成
@@ -417,7 +420,7 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
 //        api.sendReq(req);
 //    }
 
-    public void startAlipay(String json){
+    public void startAlipay(String json) {
         final Runnable payRunnable = new Runnable() {
 
             @Override
@@ -439,9 +442,9 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onReceiveEvent(Object event) {
-        if(event.equals(Comments.ON_ORDER_CONFIRM)){
+        if (event.equals(Comments.ON_ORDER_CONFIRM)) {
 //            Log.i("eventbus","ConfirmOrderActivity");
-            startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index",0));
+            startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index", 0));
             finish();
         }
     }
@@ -467,17 +470,21 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
                     if (TextUtils.equals(resultStatus, "9000")) {
                         startActivity(new Intent(mContext, PayResultActivity.class));
                     } else {
-                        startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index",0));
+                        startActivity(new Intent(mContext, OrderListActivity.class).putExtra("index", 0));
                         finish();
                     }
                     break;
                 }
             }
-        };
+        }
+
+        ;
     };
 
 
-   /* *//**
+    /* */
+
+    /**
      * 请求app服务器得到的回调结果
      *//*
     @Override
@@ -512,8 +519,6 @@ public class ConfirmOrderActivity extends BaseTitleActivity implements View.OnCl
         wxapi.sendReq(request);
 
     }*/
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,20 +2,18 @@ package com.example.temple.network;
 
 public class Comments {
 
-    //    //生产
+    //生产
     public static String BASE_URL = "https://xyxj-api.xuanyuanxianjing.com";
-
-
-//        public static String BASE_URL ="https://7344013zl4.zicp.fun";//本地域名
-//    public static String BASE_URL = "http://192.168.0.111:8033";//测试  192.168.0.102:8032
+//  public static String BASE_URL ="https://7344013zl4.zicp.fun";//本地域名
+//  public static String BASE_URL = "http://192.168.0.111:8033";//测试  192.168.0.102:8032
 
     public static String BASE_IMAGE_URL = "https://41vy728617.qicp.vip/";//图片URL
-
 
     public static String USER_LOGIN = BASE_URL + "/api/v1/user/login-user";
     public static String REGISTER_USER = BASE_URL + "/api/v1/user/register-user";
     public static String SMS_CODE = BASE_URL + "/api/v1/user/smscode";
     public static String BANNER = BASE_URL + "/api/v1/banner/list";
+    public static String IS_MEMBER = BASE_URL + "/api/v1/order/get-user-is-member";//是否是道友
     public static String SEARCH_KEY = BASE_URL + "/api/v1/goods/query-good-name-page";
 
     //获取用户信息

@@ -21,10 +21,13 @@ import com.example.temple.activity.item.MoreLifeActivity;
 import com.example.temple.activity.item.OrderTeacherActivity;
 import com.example.temple.activity.item.RichActivity;
 import com.example.temple.activity.item.daoli.DaoLiActivity;
+import com.example.temple.activity.shop.GoodListActivity;
 import com.example.temple.activity.shop.ShopActivity;
 import com.example.temple.bean.BannerBean;
+import com.example.temple.dialog.HintViewPopup;
 import com.example.temple.network.Comments;
 import com.example.temple.network.OnError;
+import com.lxj.xpopup.XPopup;
 import com.rxjava.rxlife.RxLife;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -85,6 +88,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.iv_shanzhong)
     ImageView iv_shanzhong;
 
+    HintViewPopup hintViewPopup;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -119,12 +123,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home2;
     }
-
 
 
     @Override
@@ -154,25 +156,32 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         super.onClick(v);
         if (v.getId() == R.id.ll_changshou) {
-            startActivity(new Intent(getActivity(), MoreLifeActivity.class));
+            getIsMember(1);
+
         } else if (v.getId() == R.id.ll_fugui) {
-            startActivity(new Intent(getActivity(), RichActivity.class));
+            getIsMember(2);
+
         } else if (v.getId() == R.id.ll_haode) {
-            startActivity(new Intent(getActivity(), GoodMoralityActivity.class));
+            getIsMember(3);
+
         } else if (v.getId() == R.id.ll_kangning) {
-            startActivity(new Intent(getActivity(), HealthActivity.class));
+            getIsMember(4);
+
         } else if (v.getId() == R.id.ll_shanzhong) {
-            startActivity(new Intent(getActivity(), GoodEndingActivity.class));
+            getIsMember(5);
+
         } else if (v.getId() == R.id.ll_yuyuelaoshi) {
             startActivity(new Intent(getActivity(), OrderTeacherActivity.class));
         } else if (v.getId() == R.id.ll_shop) {
             startActivity(new Intent(getActivity(), ShopActivity.class));
         } else if (v.getId() == R.id.ll_shop) {
             startActivity(new Intent(getActivity(), ShopActivity.class));
-        } else if (v.getId() == R.id.ll_wufu) {
-            startActivity(new Intent(getActivity(), FiveBlessingsActivity.class));
         } else if (v.getId() == R.id.ll_dailishang) {
-            startActivity(new Intent(getActivity(), AgentActivity.class));
+            getIsMember(6);
+
+        } else if (v.getId() == R.id.ll_wufu) {
+            getIsMember(7);
+
         } else if (v.getId() == R.id.ll_daoli) {
             startActivity(new Intent(getActivity(), DaoLiActivity.class));
 
@@ -189,6 +198,63 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         }
 
     }
+
+    public void getIsMember(int type) {
+        RxHttp.get(Comments.IS_MEMBER)
+                .asResponse(String.class)
+                .doFinally(() -> {
+                    //请求结束，当前在主线程回调
+                    if (refreshLayout.isRefreshing()) {
+                        refreshLayout.finishRefresh();
+                    }
+                    if (refreshLayout.isLoading()) {
+                        refreshLayout.finishLoadMore();
+                    }
+                })
+                .to(RxLife.toMain(this))
+                .subscribe(model -> {
+                    if (model.getData() != null) {
+                        if (model.getData().equals("NO")) {
+                            //不是道友
+                            if (hintViewPopup == null) {
+                                hintViewPopup = new HintViewPopup(getActivity(), "此模块需在典藏区购买99元产品 成为道友方可阅览", new HintViewPopup.onClickDone() {
+                                    @Override
+                                    public void selectAffrim() {
+                                        startActivity(new Intent(getActivity(), GoodListActivity.class).putExtra("type",4));
+                                        hintViewPopup.dismiss();
+                                    }
+
+                                });
+                            }
+                            new XPopup.Builder(getActivity())
+                                    .dismissOnBackPressed(true)
+                                    .dismissOnTouchOutside(true)
+                                    .asCustom(hintViewPopup)
+                                    .show();
+                        } else {
+                            if (type == 1) {//长寿
+                                startActivity(new Intent(getActivity(), MoreLifeActivity.class));
+                            } else if (type == 2) {//富贵
+                                startActivity(new Intent(getActivity(), RichActivity.class));
+                            } else if (type == 3) {//好德
+                                startActivity(new Intent(getActivity(), GoodMoralityActivity.class));
+                            } else if (type == 4) {//康宁
+                                startActivity(new Intent(getActivity(), HealthActivity.class));
+                            } else if (type == 5) {//善终
+                                startActivity(new Intent(getActivity(), GoodEndingActivity.class));
+                            } else if (type == 6) {//代理商
+                                startActivity(new Intent(getActivity(), AgentActivity.class));
+                            } else if (type == 7) {//五福殿堂
+                                startActivity(new Intent(getActivity(), FiveBlessingsActivity.class));
+                            }
+                        }
+
+                    }
+                }, (OnError) error -> {
+                    onJsonDataGetFailed(error.getErrorCode(), error.getErrorMsg(), 3000);
+                });
+    }
+
 
     public void getBannerList() {
         RxHttp.get(Comments.BANNER)

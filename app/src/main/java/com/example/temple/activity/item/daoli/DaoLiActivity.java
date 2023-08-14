@@ -158,6 +158,9 @@ public class DaoLiActivity extends BaseTitleActivity implements View.OnClickList
     }
 
 
+
+
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.iv_left) {

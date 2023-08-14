@@ -306,8 +306,8 @@ public class ShoopDetailBean implements Serializable {
         private int buyAmount;
         private Integer goodSpecId;
         private int id;
-        private double orgPrice;
-        private double price;
+        private String orgPrice;
+        private String price;
         private int sales;
         private String specCover;
         private String specName;
@@ -360,19 +360,19 @@ public class ShoopDetailBean implements Serializable {
             this.id = id;
         }
 
-        public double getOrgPrice() {
+        public String getOrgPrice() {
             return orgPrice;
         }
 
-        public void setOrgPrice(double orgPrice) {
+        public void setOrgPrice(String orgPrice) {
             this.orgPrice = orgPrice;
         }
 
-        public double getPrice() {
+        public String getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(String price) {
             this.price = price;
         }
 

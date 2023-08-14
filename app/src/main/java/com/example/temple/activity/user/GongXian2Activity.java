@@ -12,13 +12,17 @@ import com.example.temple.activity.base.BaseTitleActivity;
 import com.example.temple.adapter.MyPagerAdapter;
 import com.example.temple.bean.UserInfoBean;
 import com.example.temple.fragment.GongXianFragment;
+import com.example.temple.network.Comments;
+import com.example.temple.network.OnError;
 import com.example.temple.utils.DataCacheUtil;
+import com.rxjava.rxlife.RxLife;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 import butterknife.BindView;
+import rxhttp.wrapper.param.RxHttp;
 
 public class GongXian2Activity extends BaseTitleActivity implements View.OnClickListener {
 
@@ -55,11 +59,11 @@ public class GongXian2Activity extends BaseTitleActivity implements View.OnClick
         mAdapter = new MyPagerAdapter(getSupportFragmentManager(), 1, fragments);
         orderPager.setOffscreenPageLimit(5);
         orderPager.setAdapter(mAdapter);
-        UserInfoBean user = DataCacheUtil.getInstance(mContext).getUserInfo();
-        tvBalance.setText(user.getBalance());
-        tvDou.setText(user.getDou());
-        mIndex=0;
-        orderPager.setCurrentItem(mIndex,false);
+        getUserInfo();
+
+
+        mIndex = 0;
+        orderPager.setCurrentItem(mIndex, false);
     }
 
     @Override
@@ -68,11 +72,33 @@ public class GongXian2Activity extends BaseTitleActivity implements View.OnClick
     }
 
 
+    public void getUserInfo() {
+        RxHttp.get(Comments.GET_USER_INFO)
+                .asResponse(UserInfoBean.class)
+                .to(RxLife.toMain(this))
+                .subscribe(model -> {
+                    if (model.getData() != null) {
+
+                        onJsonDataGetSuccess(model.getData(), 1000);
+                    }
+                }, (OnError) error -> {
+                    onJsonDataGetFailed(error.getErrorCode(), error.getErrorMsg(), 1000);
+                });
+
+    }
+
+
     @Override
     public void onJsonDataGetSuccess(Object re_data, int reqcode) {
         super.onJsonDataGetSuccess(re_data, reqcode);
         if (reqcode == 1000) {
 
+            UserInfoBean user = (UserInfoBean) re_data;
+            DataCacheUtil.getInstance(this).getmSharedPreferences().saveString("randomId", user.getRandomId());
+            DataCacheUtil.getInstance(this).saveUserInfo(user);
+
+            tvBalance.setText(user.getBalance());
+            tvDou.setText(user.getDou());
         } else if (reqcode == 2000) {
 
         }
@@ -94,7 +120,7 @@ public class GongXian2Activity extends BaseTitleActivity implements View.OnClick
 
             @Override
             public void onPageSelected(int position) {
-                mIndex=position;
+                mIndex = position;
             }
 
             @Override
@@ -109,17 +135,17 @@ public class GongXian2Activity extends BaseTitleActivity implements View.OnClick
 
     private int getDay() {
         Calendar cd = Calendar.getInstance();
-        return  cd.get(Calendar.DATE);
+        return cd.get(Calendar.DATE);
     }
 
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.tv_trans_out) {
-            Intent intent=new Intent(this, TransOutActivity.class);
+            Intent intent = new Intent(this, TransOutActivity.class);
             startActivity(intent);
         } else if (view.getId() == R.id.tv_trans_detail) {
-            Intent intent=new Intent(this, TransDetailActivity.class);
+            Intent intent = new Intent(this, TransDetailActivity.class);
             startActivity(intent);
         }
     }

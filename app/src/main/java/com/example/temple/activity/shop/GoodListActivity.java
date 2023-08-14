@@ -73,7 +73,9 @@ public class GoodListActivity extends BaseTitleActivity {
             baseTitle.setText("互换区");
             mGoodType = "THREE";
         }else if(mType == 4) {
-            baseTitle.setText("更多分类");
+            baseTitle.setText("典藏区");
+            mGoodType = "FOUR";
+//            baseTitle.setText("更多分类");
         }
         getProType();
     }
@@ -168,11 +170,11 @@ public class GoodListActivity extends BaseTitleActivity {
     public void refreshData() {
         //分页情况用于刷新数据
         page = 0;
-        if(mType == 4) {
-            getByTypePage();
-        }else {
+//        if(mType == 4) {
+//            getByTypePage();
+//        }else {
             getByType();
-        }
+//        }
 
     }
 
@@ -180,11 +182,11 @@ public class GoodListActivity extends BaseTitleActivity {
         //分页情况用于加载更多数据
         if (page < mTotalPage-1) {
             page++;
-            if(mType == 4) {
-                getByTypePage();
-            }else {
+//            if(mType == 4) {
+//                getByTypePage();
+//            }else {
                 getByType();
-            }
+//            }
         } else {
             ToastUtils.showShort("暂无更多数据！");
             if (refreshLayout.isLoading()) {

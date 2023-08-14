@@ -49,8 +49,6 @@ import rxhttp.wrapper.param.RxHttp;
 
 public class ShopActivity extends BaseActivity implements View.OnClickListener{
 
-
-
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
 

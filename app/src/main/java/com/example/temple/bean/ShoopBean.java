@@ -125,7 +125,7 @@ public class ShoopBean {
         private int id;
         private String isPicked;
         private String name;
-        private double price;
+        private String price;
         private int sales;
         private List<SpecVOBean> specVO;
         private String typeEnum;
@@ -202,11 +202,11 @@ public class ShoopBean {
             this.name = name;
         }
 
-        public double getPrice() {
+        public String getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(String price) {
             this.price = price;
         }
 

@@ -191,7 +191,7 @@ public class HomeBean extends BaseResponse {
             private String description;
             private GoodTypeVO goodTypeVO;
             private int sales;
-            private double price;
+            private String price;
             private String typeEnum;
             private String isPicked;
 
@@ -252,11 +252,11 @@ public class HomeBean extends BaseResponse {
                 this.sales = sales;
             }
 
-            public double getPrice() {
+            public String getPrice() {
                 return price;
             }
 
-            public void setPrice(double price) {
+            public void setPrice(String price) {
                 this.price = price;
             }
 
@@ -474,7 +474,7 @@ public class HomeBean extends BaseResponse {
             private String description;
             private GoodRankingVOBean.ContentBean.GoodTypeVO goodTypeVO;
             private int sales;
-            private double price;
+            private String price;
             private String typeEnum;
             private String isPicked;
 
@@ -534,11 +534,11 @@ public class HomeBean extends BaseResponse {
                 this.sales = sales;
             }
 
-            public double getPrice() {
+            public String getPrice() {
                 return price;
             }
 
-            public void setPrice(double price) {
+            public void setPrice(String price) {
                 this.price = price;
             }
 

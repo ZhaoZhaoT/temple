@@ -1,73 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:banner="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBF8F4"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:banner="http://schemas.android.com/apk/res-auto">
+    android:background="#FBF8F4">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="237dp"
-        android:src="@mipmap/shop_top_bg"
         android:scaleType="fitXY"
-        ></ImageView>
+        android:src="@mipmap/shop_top_bg"/>
 
     <RelativeLayout
         android:id="@+id/rl_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp">
+
         <LinearLayout
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="5dp"
+            android:padding="10dp">
+
             <ImageView
                 android:layout_width="10dp"
                 android:layout_height="18dp"
-                android:src="@mipmap/write_back"
-                ></ImageView>
+                android:src="@mipmap/write_back"/>
         </LinearLayout>
+
         <ImageView
             android:id="@+id/order"
             android:layout_width="20dp"
             android:layout_height="21dp"
-            android:src="@mipmap/shop_order"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            ></ImageView>
+            android:src="@mipmap/shop_order"/>
+
         <LinearLayout
             android:id="@+id/ll_home_search"
             android:layout_width="match_parent"
             android:layout_height="31dp"
-            android:layout_toRightOf="@+id/back"
-            android:layout_toLeftOf="@+id/order"
             android:layout_centerVertical="true"
-            app:bl_corners_radius="25dp"
-            app:bl_solid_color="@color/white"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/order"
+            android:layout_toRightOf="@+id/back"
             android:gravity="center_vertical"
-            >
+            app:bl_corners_radius="25dp"
+            app:bl_solid_color="@color/white">
+
             <ImageView
                 android:layout_width="14dp"
                 android:layout_height="14dp"
-                android:src="@mipmap/shop_search"
                 android:layout_marginLeft="10dp"
-                ></ImageView>
+                android:src="@mipmap/shop_search"/>
+
             <TextView
                 android:id="@+id/edit_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="搜索产品名称"
-                android:textSize="14sp"
-                android:textColor="#CCCCCC"
                 android:layout_marginLeft="7dp"
-                ></TextView>
+                android:text="搜索产品名称"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp"/>
 
         </LinearLayout>
 
@@ -79,179 +80,178 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/rl_search"
         app:srlDisableContentWhenRefresh="true">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.youth.banner.Banner
-                android:id="@+id/banner"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_below="@+id/ll_home_search"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:visibility="visible"
-                banner:banner_indicator_marginBottom="7.5dp"
-                banner:banner_indicator_normal_color="#80FFFFFF"
-                banner:banner_indicator_normal_width="5dp"
-                banner:banner_indicator_height="15dp"
-                banner:banner_indicator_selected_color="@color/white"
-                banner:banner_indicator_selected_width="5dp"
-                banner:banner_indicator_space="7dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:paddingTop="10dp"
-                app:bl_corners_radius="9dp"
-                app:bl_solid_color="@color/white"
-                >
+                android:orientation="vertical">
 
-                <com.example.temple.view.CustomImageText
-                    android:id="@+id/menu1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    app:pic_backgroud_height="48dp"
-                    app:pic_backgroud_width="48dp"
-                    app:pic_padding="8dp"
-                    app:pic_src="@mipmap/tegong"
-                    app:pic_text="特供区"
-                    app:pic_text_color="@color/back1"
-                    app:pic_text_size="13" />
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_below="@+id/ll_home_search"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="visible"
+                    banner:banner_indicator_height="15dp"
+                    banner:banner_indicator_marginBottom="7.5dp"
+                    banner:banner_indicator_normal_color="#80FFFFFF"
+                    banner:banner_indicator_normal_width="5dp"
+                    banner:banner_indicator_selected_color="@color/white"
+                    banner:banner_indicator_selected_width="5dp"
+                    banner:banner_indicator_space="7dp" />
 
-                <com.example.temple.view.CustomImageText
-                    android:id="@+id/menu2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    app:pic_backgroud_height="48dp"
-                    app:pic_backgroud_width="48dp"
-                    app:pic_padding="8dp"
-                    app:pic_src="@mipmap/wenchuang"
-                    app:pic_text="文创区"
-                    app:pic_text_color="@color/back1"
-                    app:pic_text_size="13" />
-
-                <com.example.temple.view.CustomImageText
-                    android:id="@+id/menu3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    app:pic_backgroud_height="48dp"
-                    app:pic_backgroud_width="48dp"
-                    app:pic_padding="8dp"
-                    app:pic_src="@mipmap/huhuan"
-                    app:pic_text="互换区"
-                    app:pic_text_color="@color/back1"
-                    app:pic_text_size="13" />
-
-                <com.example.temple.view.CustomImageText
-                    android:id="@+id/menu4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    app:pic_backgroud_height="48dp"
-                    app:pic_backgroud_width="48dp"
-                    app:pic_padding="8dp"
-                    app:pic_src="@mipmap/gengduo"
-                    app:pic_text="更多分类"
-                    app:pic_text_color="@color/back1"
-                    app:pic_text_size="13" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dp"
-                    android:layout_weight="1"
-                    android:text="排行榜"
-                    android:textColor="@color/text_gray333"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_home_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="查看更多"
-                    android:textColor="@color/text_gray"
-                    android:textSize="13sp" />
-
-                <ImageView
-                    android:layout_width="5.5dp"
-                    android:layout_height="10dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginRight="17dp"
-                    android:src="@mipmap/iv_right" />
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:overScrollMode="never" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_recomd_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="17dp"
-                    android:text="好物推荐"
-                    android:textColor="@color/text_gray333"
-                    android:textStyle="bold"
-                    android:textSize="17sp" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rView2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_recomd_title"
+                    android:layout_margin="10dp"
+                    android:paddingTop="10dp"
+                    app:bl_corners_radius="9dp"
+                    app:bl_solid_color="@color/white">
+
+                    <com.example.temple.view.CustomImageText
+                        android:id="@+id/menu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:pic_backgroud_height="48dp"
+                        app:pic_backgroud_width="48dp"
+                        app:pic_padding="8dp"
+                        app:pic_src="@mipmap/tegong"
+                        app:pic_text="特供区"
+                        app:pic_text_color="@color/back1"
+                        app:pic_text_size="13" />
+
+                    <com.example.temple.view.CustomImageText
+                        android:id="@+id/menu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:pic_backgroud_height="48dp"
+                        app:pic_backgroud_width="48dp"
+                        app:pic_padding="8dp"
+                        app:pic_src="@mipmap/wenchuang"
+                        app:pic_text="文创区"
+                        app:pic_text_color="@color/back1"
+                        app:pic_text_size="13" />
+
+                    <com.example.temple.view.CustomImageText
+                        android:id="@+id/menu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:pic_backgroud_height="48dp"
+                        app:pic_backgroud_width="48dp"
+                        app:pic_padding="8dp"
+                        app:pic_src="@mipmap/huhuan"
+                        app:pic_text="互换区"
+                        app:pic_text_color="@color/back1"
+                        app:pic_text_size="13" />
+
+                    <com.example.temple.view.CustomImageText
+                        android:id="@+id/menu4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:pic_backgroud_height="48dp"
+                        app:pic_backgroud_width="48dp"
+                        app:pic_padding="8dp"
+                        app:pic_src="@mipmap/diancang"
+                        app:pic_text="典藏区"
+                        app:pic_text_color="@color/back1"
+                        app:pic_text_size="13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="17dp"
+                        android:layout_weight="1"
+                        android:text="排行榜"
+                        android:textColor="@color/text_gray333"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_home_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看更多"
+                        android:textColor="@color/text_gray"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="5.5dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="17dp"
+                        android:src="@mipmap/iv_right" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:overScrollMode="never" />
-            </RelativeLayout>
 
-        </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_recomd_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="好物推荐"
+                        android:textColor="@color/text_gray333"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_recomd_title"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:overScrollMode="never" />
+                </RelativeLayout>
+
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
-
-
 
 
 </RelativeLayout>
