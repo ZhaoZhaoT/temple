@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="药膳"
+            android:text="体质检测"
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:text="为了确保结果的准确性，请您根据自身实际情况回答以下问题"
+            android:text="通过体质检测可以了解自身的身体状况，旨在为体质辨识及与中医体质相关疾病的防治、养生保健、健康管理提供依据，使体质分类科学化、规范化。体质测试为我们日常辨别养生常识的真伪提供了强有力的证据。可以帮助大家维护健康，早发现，早调理，早预防。"
             android:textColor="#3C241E"
             android:textSize="16sp" />
 

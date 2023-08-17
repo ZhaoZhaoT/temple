@@ -116,8 +116,11 @@
         <activity android:name=".activity.fiveblessings.WeddingBanquetActivity" />
         <activity android:name=".activity.fiveblessings.SurnameSacrificeActivity" />
         <activity android:name=".activity.fiveblessings.SurnameMemorabiliaActivity" />
-        <activity android:name=".activity.fiveblessings.ContentDetailActivity" />
+        <activity android:name=".activity.fiveblessings.ContentDetailActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.fiveblessings.ArticleDetailActivity" />
+        <activity android:name=".activity.fiveblessings.ArticleDetailNewActivity" />
+
         <activity android:name=".activity.fiveblessings.PhotoDetailActivity" />
         <activity android:name=".activity.fiveblessings.publish.PublishArticleActivity" />
         <activity android:name=".activity.item.daoli.DaoLiActivity" />

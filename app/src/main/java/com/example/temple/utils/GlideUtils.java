@@ -269,9 +269,11 @@ public class GlideUtils {
                 .error(empty);      //错误图
 
         if (!url.startsWith("http")) {
-            Glide.with(context).load(Comments.BASE_IMAGE_URL + url).apply(options).into(imageView);
+            Glide.with(context).load(Comments.BASE_IMAGE_URL + url).apply(options)
+                    .into(imageView);
         } else {
-            Glide.with(context).load(url).apply(options).into(imageView);
+            Glide.with(context).load(url).apply(options)
+                    .into(imageView);
         }
     }
 

@@ -12,6 +12,7 @@ public class UserInfoBean implements Serializable {
     private String randomId;
     private String sharePath;
     private String withdrawService;
+    private String userLevelName;
 
     public String getWithdrawService() {
         return withdrawService;
@@ -19,6 +20,14 @@ public class UserInfoBean implements Serializable {
 
     public void setWithdrawService(String withdrawService) {
         this.withdrawService = withdrawService;
+    }
+
+    public String getUserLevelName() {
+        return userLevelName;
+    }
+
+    public void setUserLevelName(String userLevelName) {
+        this.userLevelName = userLevelName;
     }
 
     public String getAvatarUrl() {

@@ -305,7 +305,7 @@ public class YaoShanActivity extends BaseTitleActivity implements View.OnClickLi
             } else if (mLinOne.getVisibility() == View.VISIBLE) {
                 //回到上一个开始测试引导题
                 tv_one.setText("开始测试");
-                tjq.setText("为了确保结果的准确性，请您根据自身实际情况回答以下问题");
+                tjq.setText("通过体质检测可以了解自身的身体状况，旨在为体质辨识及与中医体质相关疾病的防治、养生保健、健康管理提供依据，使体质分类科学化、规范化。体质测试为我们日常辨别养生常识的真伪提供了强有力的证据。可以帮助大家维护健康，早发现，早调理，早预防。");
                 mLayoutSex.setVisibility(View.VISIBLE);
                 mLayoutAge.setVisibility(View.VISIBLE);
 

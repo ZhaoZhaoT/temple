@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -22,12 +23,16 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="神话中的长寿之神"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingRight="15dp"
                 android:textColor="#ff333333"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="神话中的长寿之神" />
 
             <View
                 android:layout_width="0.5dp"
@@ -49,12 +54,13 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="2023-02-23"
                     android:textColor="#ff999999"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:text="2023-02-23" />
 
             </LinearLayout>
         </LinearLayout>
@@ -64,7 +70,7 @@
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/main_image2" />
+            android:src="@mipmap/no_empty_one" />
     </LinearLayout>
 
 
@@ -81,10 +87,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/video_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="194dp"
                 android:scaleType="fitXY"
-                android:src="@mipmap/icon_video_bg" />
+                android:src="@mipmap/no_empty_one" />
 
             <ImageView
                 android:layout_width="wrap_content"

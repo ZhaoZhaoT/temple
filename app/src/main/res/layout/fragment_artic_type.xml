@@ -8,7 +8,7 @@
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:srlDisableContentWhenRefresh="true">
 
         <androidx.recyclerview.widget.RecyclerView

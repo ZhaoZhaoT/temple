@@ -9,28 +9,32 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.temple.R;
 import com.example.temple.activity.base.BaseTitleActivity;
+import com.example.temple.activity.item.fragment.GongFaListFragment;
 import com.example.temple.adapter.MyPagerAdapter;
-import com.example.temple.fragment.RichListFragment;
+import com.example.temple.bean.changshou.ChangShouListBean;
+import com.example.temple.network.Comments;
+import com.example.temple.network.OnError;
 import com.flyco.tablayout.SlidingTabLayout;
+import com.rxjava.rxlife.RxLife;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
+import rxhttp.wrapper.param.RxHttp;
 
+//富贵
 public class RichActivity extends BaseTitleActivity implements View.OnClickListener {
-
-
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.table_order)
     SlidingTabLayout tableOrder;
     @BindView(R.id.order_pager)
     ViewPager orderPager;
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
-    private final String[] mTitles = {"企业长青之道", "幸福和谐之道","个人成长之道","健康长寿之道","人生圆满之道"};
+    private String[] mTitles;
     private MyPagerAdapter mAdapter;
-    private int mIndex;
 
 
     @Override
@@ -46,27 +50,47 @@ public class RichActivity extends BaseTitleActivity implements View.OnClickListe
     @Override
     protected void initView() {
         baseTitleGone();
-        mIndex=getIntent().getIntExtra("index",1);
+        getInfo();
+    }
 
-        fragments.add(new RichListFragment());
-        fragments.add(new RichListFragment());
-        fragments.add(new RichListFragment());
-        fragments.add(new RichListFragment());
-        fragments.add(new RichListFragment());
+
+    public void getInfo() {
+        RxHttp.get(Comments.ZHANGSHOU_INFO)
+                .add("type", "TWO")
+                .asResponseList(ChangShouListBean.class)
+                .doFinally(() -> {
+
+                })
+                .to(RxLife.toMain(this))
+                .subscribe(model -> {
+                    onJsonDataGetSuccess(model.getData(), 3000);
+                }, (OnError) error -> {
+                    onJsonDataGetFailed(error.getErrorCode(), error.getErrorMsg(), 2000);
+                });
+    }
+
+
+    @Override
+    public void onJsonDataGetSuccess(Object re_data, int reqcode) {
+        super.onJsonDataGetSuccess(re_data, reqcode);
+        List<ChangShouListBean> bean = (List<ChangShouListBean>) re_data;
+        mTitles = new String[bean.size()];
+        for (int i = 0; i < bean.size(); i++) {
+            fragments.add(new GongFaListFragment(bean.get(i).getContent()));
+            mTitles[i] = bean.get(i).getTitle();
+        }
         mAdapter = new MyPagerAdapter(getSupportFragmentManager(), 1, fragments);
         mAdapter.setmTitles(mTitles);//设置页面标题
-        orderPager.setOffscreenPageLimit(5);
+        orderPager.setOffscreenPageLimit(bean.size());
         orderPager.setAdapter(mAdapter);
         tableOrder.setViewPager(orderPager);
-
     }
+
 
     @Override
     protected void initListener() {
         super.initListener();
-
-        iv_left.setOnClickListener(this);
-
+        mIvLeft.setOnClickListener(this);
         orderPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -75,7 +99,6 @@ public class RichActivity extends BaseTitleActivity implements View.OnClickListe
 
             @Override
             public void onPageSelected(int position) {
-                mIndex=position;
             }
 
             @Override
@@ -87,11 +110,10 @@ public class RichActivity extends BaseTitleActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.iv_left) {
+        if (v.getId() == R.id.iv_left) {
             finish();
         }
     }
-
 
 
 }

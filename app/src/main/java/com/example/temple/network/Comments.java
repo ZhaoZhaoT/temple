@@ -4,7 +4,7 @@ public class Comments {
 
     //生产
     public static String BASE_URL = "https://xyxj-api.xuanyuanxianjing.com";
-//  public static String BASE_URL ="https://7344013zl4.zicp.fun";//本地域名
+//    public static String BASE_URL = "https://7344013zl4.zicp.fun";//本地域名
 //  public static String BASE_URL = "http://192.168.0.111:8033";//测试  192.168.0.102:8032
 
     public static String BASE_IMAGE_URL = "https://41vy728617.qicp.vip/";//图片URL
@@ -96,6 +96,14 @@ public class Comments {
 
     //道历
     public static String DAOLI_INFO = BASE_URL + "/api/v1/teacher/get-calendar";
+
+    //视频 文章
+    public static String CONSULT_INFO = BASE_URL + "/api/v1/consult/query-consult-page";
+
+    //代理商
+    public static String AGENT_DETAIL = BASE_URL + "/api/v1/consult/get-agent-detail";
+    public static String ADD_AGENT = BASE_URL + "/api/v1/consult/add-agent";
+
 
     public static final int HOME_TO_LOGIN = 1000;
     public static final int HOME_TO_AUTHER = 1100;

@@ -37,7 +37,7 @@ public class LongevityChapterActivity extends BaseTitleActivity implements View.
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private final String[] mTitles = {"全部", "视频", "文章"};
     private MyPagerAdapter mAdapter;
-    private int type;//0 长寿篇 1 富贵篇 2 好德篇 3 康宁篇 4 善终篇
+    private String type;// ZERO 长寿篇 ONE 富贵篇 TWO 好德篇  THREE 康宁篇 FOUR 善终篇
 
 
     @Override
@@ -53,27 +53,27 @@ public class LongevityChapterActivity extends BaseTitleActivity implements View.
     @Override
     protected void initView() {
         baseTitleGone();
-        type = getIntent().getIntExtra("type", 0);
-        if (type == 0) {
+        type = getIntent().getStringExtra("type");
+        if (type.equals("ZERO")) {
             tv_title.setText("长寿篇");
             lin_content_top.setBackgroundColor(Color.parseColor("#D9D9D9"));
-        } else if (type == 1) {
+        } else if (type .equals("ONE")) {
             tv_title.setText("富贵篇");
             lin_content_top.setBackgroundColor(Color.parseColor("#E7D6C7"));
-        } else if (type == 2) {
+        } else if (type .equals("TWO")) {
             tv_title.setText("好德篇");
             lin_content_top.setBackgroundColor(Color.parseColor("#EFE2CF"));
-        } else if (type == 3) {
+        } else if (type .equals("THREE")) {
             tv_title.setText("康宁篇");
             lin_content_top.setBackgroundColor(Color.parseColor("#DEE5E9"));
-        } else if (type == 4) {
+        } else if (type.equals("FOUR")) {
             tv_title.setText("善终篇");
             lin_content_top.setBackgroundColor(Color.parseColor("#CCCCCA"));
         }
 
-        fragments.add(new ArticTypeListFragment(0));
-        fragments.add(new ArticTypeListFragment(1));
-        fragments.add(new ArticTypeListFragment(2));
+        fragments.add(new ArticTypeListFragment("ZERO",type));
+        fragments.add(new ArticTypeListFragment("ONE",type));
+        fragments.add(new ArticTypeListFragment("TWO",type));
         mAdapter = new MyPagerAdapter(getSupportFragmentManager(), 1, fragments);
         mAdapter.setmTitles(mTitles);//设置页面标题
         orderPager.setOffscreenPageLimit(3);

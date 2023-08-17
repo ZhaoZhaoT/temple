@@ -4,6 +4,8 @@ import static android.app.Activity.RESULT_OK;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +41,8 @@ public class MeFragment extends BaseFragment {
     TextView tvUserPhone;
     @BindView(R.id.tv_user_name)
     TextView tvUserName;
-
+    @BindView(R.id.user_level)
+    TextView user_level;
     @BindView(R.id.logout)
     TextView logout;
 
@@ -58,19 +61,35 @@ public class MeFragment extends BaseFragment {
     @Override
     protected void initView(Bundle savedInstanceState) {
         UserInfoBean user = DataCacheUtil.getInstance(getContext()).getUserInfo();
-        if(user==null){
+        if (user == null) {
             getUserInfo();
-        }else {
-            GlideUtils.loadCircleImage(getContext(),user.getAvatarUrl(),R.mipmap.default_head,ivHead);
+        } else {
+            GlideUtils.loadCircleImage(getContext(), user.getAvatarUrl(), R.mipmap.default_head, ivHead);
             ivHead.setTag(user.getAvatarUrl());
             tvUserPhone.setText(user.getPhone());
+            if (!TextUtils.isEmpty(user.getUserLevelName())) {
+                if (user.getUserLevelName().equals("ZERO")) {
+                    user_level.setVisibility(View.GONE);
+                    user_level.setBackgroundResource(R.drawable.yk_bg);
+                    user_level.setText("游客");
+                } else if (user.getUserLevelName().equals("ONE")) {
+                    user_level.setVisibility(View.VISIBLE);
+                    user_level.setBackgroundResource(R.drawable.xz_bg);
+                    user_level.setText("信众");
+                } else if (user.getUserLevelName().equals("TWO")) {
+                    user_level.setVisibility(View.VISIBLE);
+                    user_level.setBackgroundResource(R.drawable.tz_bg);
+                    user_level.setText("堂主");
+                }
+            }
+
             tvUserName.setText(user.getNickName());
         }
 
         ivHead.setOnClickListener(v -> {
-            Intent intent=new Intent(getContext(), UserInfoActivity.class);
-            intent.putExtra("name",tvUserName.getText().toString());
-            intent.putExtra("head",(String) ivHead.getTag());
+            Intent intent = new Intent(getContext(), UserInfoActivity.class);
+            intent.putExtra("name", tvUserName.getText().toString());
+            intent.putExtra("head", (String) ivHead.getTag());
             startActivityForResult(intent, Comments.HOME_TO_ACCOUNT);
         });
         rlMx.setOnClickListener(v -> {
@@ -138,20 +157,35 @@ public class MeFragment extends BaseFragment {
     @Override
     public void onJsonDataGetSuccess(Object re_data, int reqcode) {
         super.onJsonDataGetSuccess(re_data, reqcode);
-        if(reqcode==1000){
-            UserInfoBean user= (UserInfoBean) re_data;
+        if (reqcode == 1000) {
+            UserInfoBean user = (UserInfoBean) re_data;
             DataCacheUtil.getInstance(getContext()).getmSharedPreferences().saveString("randomId", user.getRandomId());
             DataCacheUtil.getInstance(getContext()).saveUserInfo(user);
 
-            if(tvUserName!=null){
+            if (tvUserName != null) {
                 tvUserName.setText(user.getNickName());
                 tvUserPhone.setText(BaseUtils.phoneEncode(user.getPhone()));
-                GlideUtils.loadCircleImage(getContext(),user.getAvatarUrl(),R.mipmap.default_head,ivHead);
+                if (!TextUtils.isEmpty(user.getUserLevelName())) {
+                    if (user.getUserLevelName().equals("ZERO")) {
+                        user_level.setVisibility(View.GONE);
+                        user_level.setBackgroundResource(R.drawable.yk_bg);
+                        user_level.setText("游客");
+                    } else if (user.getUserLevelName().equals("ONE")) {
+                        user_level.setVisibility(View.VISIBLE);
+                        user_level.setBackgroundResource(R.drawable.xz_bg);
+                        user_level.setText("信众");
+                    } else if (user.getUserLevelName().equals("TWO")) {
+                        user_level.setVisibility(View.VISIBLE);
+                        user_level.setBackgroundResource(R.drawable.tz_bg);
+                        user_level.setText("堂主");
+                    }
+                }
+                GlideUtils.loadCircleImage(getContext(), user.getAvatarUrl(), R.mipmap.default_head, ivHead);
                 ivHead.setTag(user.getAvatarUrl());
-            }else{
+            } else {
                 ToastUtils.showLong("应用程序异常，请重启APP");
             }
-        }else if(reqcode==2000){
+        } else if (reqcode == 2000) {
             DataCacheUtil.getInstance(getContext()).saveUser(null);
             DataCacheUtil.getInstance(getContext()).saveUserInfo(null);
             DataCacheUtil.getInstance(getContext()).getmSharedPreferences().saveString("token", "");
@@ -187,7 +221,6 @@ public class MeFragment extends BaseFragment {
         super.onResume();
 
     }
-
 
 
 }

@@ -10,15 +10,23 @@ import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.MediaController;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.VideoView;
 
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.SizeUtils;
 import com.example.temple.R;
 import com.example.temple.activity.base.BaseTitleActivity;
+import com.example.temple.adapter.AddArticleAdapter;
+import com.example.temple.dialog.AddContentPopup;
+import com.example.temple.dialog.HintSelectPopup;
 import com.example.temple.dialog.StyleSelectPopup;
 import com.example.temple.utils.GlideEngine;
+import com.example.temple.view.remove.ItemDragTouchHelperCallback;
 import com.hw.videoprocessor.VideoProcessor;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -39,21 +47,23 @@ import butterknife.BindView;
 public class PublishArticleActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
     RelativeLayout iv_left;
-    @BindView(R.id.tv_pic)
-    TextView tv_pic;
-    @BindView(R.id.tv_video)
-    TextView tv_video;
+    @BindView(R.id.img_add)
+    ImageView img_add;
+    @BindView(R.id.add_view)
+    RecyclerView add_view;
 
-    @BindView(R.id.video_view)
-    VideoView mVv;
-
-    private int PHOTO_MAX_SIZE = 9;
+    private int PHOTO_MAX_SIZE = 1;
     private int typeImage;
 
     private ArrayList<String> picList = new ArrayList<>();
     private StyleSelectPopup styleSelectPopup;
 
     Handler handler = new Handler();
+
+    AddContentPopup addContentPopup;
+    HintSelectPopup hintSelectPopup;
+    AddArticleAdapter addArticleAdapter;
+    ArrayList<String> c = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,17 +75,57 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
         return R.layout.activity_publish_article;
     }
 
+
     @Override
     protected void initView() {
         baseTitleGone();
+        add_view.setLayoutManager(new LinearLayoutManager(this));
+        add_view.setHasFixedSize(true);
+        // 默认动画
+        add_view.setItemAnimator(new DefaultItemAnimator());
+        addArticleAdapter = new AddArticleAdapter(R.layout.item_add_content, new AddArticleAdapter.onClickDone() {
+            @Override
+            public void selectClose(int position) {
+                if (hintSelectPopup == null) {
+                    hintSelectPopup = new HintSelectPopup(PublishArticleActivity.this, "你确定要删除这个段落？",
+                            "取消", "确定", new HintSelectPopup.onClickDone() {
+                        @Override
+                        public void selectAffrim() {
+                            c.remove(position);
+                            addArticleAdapter.getData().remove(position);
+                            addArticleAdapter.notifyDataSetChanged();
+                            hintSelectPopup.dismiss();
+                        }
 
-//添加播放控制条,还是自定义好点
-        mVv.setMediaController(new MediaController(this));
+                        @Override
+                        public void selectCancle() {
+                            hintSelectPopup.dismiss();
+                        }
 
-//        // 播放在线视频
-//        Uri rawUri = Uri.parse("https://cs-xyxj.oss-cn-hangzhou.aliyuncs.com/video/6be6fed3bb634cd1ee695a4f9c4904ab.mp4");
-//        mVv.setVideoPath(rawUri.toString());
-//        mVv.start();
+                    });
+                }
+                new XPopup.Builder(PublishArticleActivity.this)
+                        .dismissOnBackPressed(true)
+                        .dismissOnTouchOutside(true)
+                        .asCustom(hintSelectPopup)
+                        .show();
+            }
+
+            @Override
+            public void selectAdd(int position) {
+                addPosition((position + 1));
+            }
+
+
+        });
+
+        add_view.setAdapter(addArticleAdapter);
+
+        // 适配器添加拖拽回调
+        ItemTouchHelper.Callback callback = new ItemDragTouchHelperCallback(addArticleAdapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+        // 为recyclerView添加拖拽功能
+        itemTouchHelper.attachToRecyclerView(add_view);
     }
 
     ArrayList<String> photos = new ArrayList<>();
@@ -85,8 +135,7 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
     protected void initListener() {
         super.initListener();
         iv_left.setOnClickListener(this);
-        tv_pic.setOnClickListener(this);
-        tv_video.setOnClickListener(this);
+        img_add.setOnClickListener(this);
     }
 
 
@@ -94,13 +143,47 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
     public void onClick(View v) {
         if (v.getId() == R.id.iv_left) {
             finish();
-        } else if (v.getId() == R.id.tv_pic) {
-            typeImage = PictureMimeType.ofImage();
-            selectPicture(photos);
-        } else if (v.getId() == R.id.tv_video) {
-            typeImage = PictureMimeType.ofVideo();
-            selectPicture(videos);
+        } else if (v.getId() == R.id.img_add) {
+
+            addPosition(0);
+
+
         }
+    }
+
+    //添加内容
+    private void addPosition(int position) {
+        if (addContentPopup == null) {
+            addContentPopup = new AddContentPopup(PublishArticleActivity.this,
+                    new AddContentPopup.onClickDone() {
+
+                        @Override
+                        public void selectPic() {
+                            typeImage = PictureMimeType.ofImage();
+                            selectPicture(photos);
+                        }
+
+                        @Override
+                        public void selectText() {
+                            c.add(position, "文字" + c.size());
+                            addArticleAdapter.setList(c);
+                        }
+
+                        @Override
+                        public void selectVideo() {
+                            typeImage = PictureMimeType.ofVideo();
+                            selectPicture(videos);
+                        }
+                    });
+        }
+        new XPopup.Builder(PublishArticleActivity.this)
+                .dismissOnBackPressed(true)
+                .dismissOnTouchOutside(true)
+                .atView(img_add)
+                .offsetX(SizeUtils.dp2px(-73))
+                .hasShadowBg(false) // 去掉半透明背景
+                .asCustom(addContentPopup)
+                .show();
 
     }
 
@@ -231,6 +314,7 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
 
     }
 
+    //视频压缩
     public void compressVideo2(Context context, String path) {
         String compressPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "VID_" + System.currentTimeMillis() + ".mp4";
         new Thread(() -> {
@@ -247,7 +331,7 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
 
                 start = System.currentTimeMillis();
 
-                //视频压缩
+
                 VideoProcessor.processor(context)
                         .input(Uri.parse(path))
                         .outHeight(originHeight)
@@ -286,13 +370,13 @@ public class PublishArticleActivity extends BaseTitleActivity implements View.On
                     //再次进行压缩
                     compressVideo2(context, compressPath);
                 } else {
-                    Log.e("SSSSS6", "onResult === " + compressPath+"\n"+"视频大小：" + new File(compressPath).length() / 1024 / 1024 + "MB");
+                    Log.e("SSSSS6", "onResult === " + compressPath + "\n" + "视频大小：" + new File(compressPath).length() / 1024 / 1024 + "MB");
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-
-                            mVv.setVideoPath(compressPath);
-                            mVv.start();
+//压缩后的视频地址
+//                            mVv.setVideoPath(compressPath);
+//                            mVv.start();
                         }
                     });
                 }

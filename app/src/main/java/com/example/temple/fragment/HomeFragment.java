@@ -186,15 +186,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             startActivity(new Intent(getActivity(), DaoLiActivity.class));
 
         } else if (v.getId() == R.id.iv_longevity_chapter) {//长寿篇
-            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", 0));
+            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", "ZERO"));
         } else if (v.getId() == R.id.iv_wealth_honor_chapter) {//富贵篇
-            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", 1));
+            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", "ONE"));
         } else if (v.getId() == R.id.iv_haode) {//好德篇
-            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", 2));
+            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", "TWO"));
         } else if (v.getId() == R.id.iv_kangning) {//康宁篇
-            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", 3));
+            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", "THREE"));
         } else if (v.getId() == R.id.iv_shanzhong) {//善终篇
-            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", 4));
+            startActivity(new Intent(getActivity(), LongevityChapterActivity.class).putExtra("type", "FOUR"));
         }
 
     }
@@ -248,7 +248,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                                 startActivity(new Intent(getActivity(), FiveBlessingsActivity.class));
                             }
                         }
-
+//
                     }
                 }, (OnError) error -> {
                     onJsonDataGetFailed(error.getErrorCode(), error.getErrorMsg(), 3000);

@@ -32,7 +32,7 @@ public class GongFaActivity extends BaseTitleActivity implements View.OnClickLis
     ViewPager orderPager;
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
-    private final String[] mTitles = {"太极养生功法", "道家洗髓功", "静坐行气功法", "气功养生"};
+    private String[] mTitles;
     private MyPagerAdapter mAdapter;
 
     @Override
@@ -73,6 +73,7 @@ public class GongFaActivity extends BaseTitleActivity implements View.OnClickLis
     public void onJsonDataGetSuccess(Object re_data, int reqcode) {
         super.onJsonDataGetSuccess(re_data, reqcode);
         List<ChangShouListBean> bean = (List<ChangShouListBean>) re_data;
+        mTitles = new String[bean.size()];
         for (int i = 0; i < bean.size(); i++) {
             fragments.add(new GongFaListFragment(bean.get(i).getContent()));
             mTitles[i] = bean.get(i).getTitle();

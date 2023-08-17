@@ -76,48 +76,15 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_fou"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@mipmap/icon_zhu_ru"/>
 
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_weight="1"
                     android:src="@mipmap/icon_zhu_mo"/>
 
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_fa"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_ming"/>
 
 
             </LinearLayout>
@@ -134,25 +101,25 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/icon_zhu_fa"/>
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/icon_zhu_ming"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@mipmap/icon_zhu_yinyang"/>
 
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_congheng"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_za"/>
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -167,23 +134,56 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/icon_zhu_congheng"/>
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/icon_zhu_za"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@mipmap/icon_zhu_nong"/>
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/icon_zhu_xiaoshuo"/>
+
+
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_xiaoshuo"/>
+                    android:src="@mipmap/icon_zhu_bing"/>
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_bing"/>
+                    android:src="@mipmap/icon_zhu_yi"/>
 
 
             </LinearLayout>
@@ -201,8 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/icon_zhu_yi"/>
+                    android:layout_weight="1"/>
 
                 <LinearLayout
                     android:layout_width="0dp"

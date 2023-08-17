@@ -3,6 +3,7 @@
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -82,63 +83,15 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="5dp"
+            android:paddingBottom="10dp"
             android:src="@mipmap/icon_add_content" />
 
-        <LinearLayout
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/add_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="102dp"
-            android:layout_marginRight="102dp"
-            android:background="@mipmap/icon_add_bg"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:paddingRight="25dp">
-
-            <TextView
-                android:id="@+id/tv_pic"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/icon_photo"
-                android:drawablePadding="10dp"
-                android:gravity="center"
-                android:text="图片"
-                android:textColor="#ff999999"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/icon_wenzi"
-                android:drawablePadding="10dp"
-                android:gravity="center"
-                android:text="文字"
-                android:textColor="#ff999999"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tv_video"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/icon_video"
-                android:drawablePadding="10dp"
-                android:gravity="center"
-                android:text="视频"
-                android:textColor="#ff999999"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <VideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
+            tools:listitem="@layout/item_add_content"/>
     </LinearLayout>
 
 

@@ -60,7 +60,7 @@ public class SettingActivity extends BaseTitleActivity {
 
     @Override
     protected void initView() {
-        baseTitle.setText("设置");
+        baseTitle.setText("偏好设置");
         statusBar.setBackgroundColor(getResources().getColor(R.color.background));
         rlTop.setBackgroundColor(getResources().getColor(R.color.background));
 
