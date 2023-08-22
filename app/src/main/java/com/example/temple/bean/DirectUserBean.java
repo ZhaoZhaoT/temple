@@ -2,13 +2,14 @@ package com.example.temple.bean;
 
 public class DirectUserBean extends BaseResponse {
 
-        private String nickName;
-        private String avatarUrl;
-        private String phone;
-        private String createdAt;
-        private String sumDouMoney;
-        private String userId;
-        private String userLevelName;
+    private String nickName;
+    private String avatarUrl;
+    private String phone;
+    private String createdAt;
+    private String sumDou;
+    private String sumMoney;
+    private String userId;
+    private String userLevelName;
 
     public String getNickName() {
         return nickName;
@@ -42,12 +43,20 @@ public class DirectUserBean extends BaseResponse {
         this.createdAt = createdAt;
     }
 
-    public String getSumDouMoney() {
-        return sumDouMoney;
+    public String getSumDou() {
+        return sumDou;
     }
 
-    public void setSumDouMoney(String sumDouMoney) {
-        this.sumDouMoney = sumDouMoney;
+    public void setSumDou(String sumDou) {
+        this.sumDou = sumDou;
+    }
+
+    public String getSumMoney() {
+        return sumMoney;
+    }
+
+    public void setSumMoney(String sumMoney) {
+        this.sumMoney = sumMoney;
     }
 
     public String getUserId() {
