@@ -16,9 +16,9 @@ import butterknife.BindView;
  */
 public class CreateScheduleActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_to_add)
-    TextView tv_to_add;
+    TextView mTvToAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,8 @@ public class CreateScheduleActivity extends BaseTitleActivity implements View.On
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
-        tv_to_add.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mTvToAdd.setOnClickListener(this);
     }
 
     @Override

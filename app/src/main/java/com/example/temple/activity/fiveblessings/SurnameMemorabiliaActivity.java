@@ -28,29 +28,24 @@ import butterknife.BindView;
  */
 public class SurnameMemorabiliaActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-    @BindView(R.id.tv_base_title)
-    TextView tv_base_title;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_all)
-    TextView tv_all;
-
+    TextView mTvAll;
     @BindView(R.id.table_order)
     SlidingTabLayout tableOrder;
     @BindView(R.id.order_pager)
     ViewPager orderPager;
-
     @BindView(R.id.tv_add)
-    TextView tv_add;
+    TextView mTvAdd;
 
-    AllSurNamePopup allSurNamePopup;
-
+    private AllSurNamePopup allSurNamePopup;
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private final String[] mTitles = {"全部", "我发布的"};
     private MyPagerAdapter mAdapter;
     private int mIndex;
-    private int from;//0 姓氏  1 宗亲
 
     CreateContentPopup createContentPopup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +59,7 @@ public class SurnameMemorabiliaActivity extends BaseTitleActivity implements Vie
     @Override
     protected void initView() {
         baseTitleGone();
-
         mIndex = getIntent().getIntExtra("index", 0);
-        from = getIntent().getIntExtra("from", 0);
-//
 
         fragments.add(new SurnameMemorabiliaFragment());
         fragments.add(new SurnameMemorabiliaFragment());
@@ -80,17 +72,15 @@ public class SurnameMemorabiliaActivity extends BaseTitleActivity implements Vie
             orderPager.setCurrentItem(mIndex);
         }
 
-        tv_all.setOnClickListener(this);
-
-        tv_add.setOnClickListener(this);
-
     }
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mTvAll.setOnClickListener(this);
+        mTvAdd.setOnClickListener(this);
 
         orderPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -120,9 +110,8 @@ public class SurnameMemorabiliaActivity extends BaseTitleActivity implements Vie
                 allSurNamePopup = new AllSurNamePopup(this, new AllSurNamePopup.onClickDone() {
                     @Override
                     public void selectData(String surname) {
-                        tv_all.setText(surname);
+                        mTvAll.setText(surname);
                     }
-
 
                 });
             }
@@ -139,7 +128,7 @@ public class SurnameMemorabiliaActivity extends BaseTitleActivity implements Vie
 //                createContentPopup = new CreateContentPopup(this, new CreateContentPopup.onClickDone() {
 //                    @Override
 //                    public void selectData(String surname) {
-//                        tv_all.setText(surname);
+//                        mTvAll.setText(surname);
 //                    }
 //
 //
@@ -150,8 +139,6 @@ public class SurnameMemorabiliaActivity extends BaseTitleActivity implements Vie
 //                    .dismissOnTouchOutside(true)
 //                    .asCustom(createContentPopup)
 //                    .show();
-
-
 
 
             startActivity(new Intent(SurnameMemorabiliaActivity.this, PublishArticleActivity.class));

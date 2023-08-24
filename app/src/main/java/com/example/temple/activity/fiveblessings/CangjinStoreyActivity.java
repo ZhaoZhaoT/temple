@@ -29,13 +29,12 @@ import butterknife.BindView;
  */
 public class CangjinStoreyActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
-    TextView tv_title;
-
+    TextView mTvTitle;
     @BindView(R.id.rView)
     RecyclerView mRView;
+
     private CangjinStoreListAdapter mAdapter;
     private String store;
 
@@ -55,12 +54,11 @@ public class CangjinStoreyActivity extends BaseTitleActivity implements View.OnC
         store = getIntent().getStringExtra("store");
     }
 
-
     @Override
     protected void initListener() {
         super.initListener();
-        tv_title.setText("第" + store + "层");
-        iv_left.setOnClickListener(this);
+        mTvTitle.setText("第" + store + "层");
+        mIvLeft.setOnClickListener(this);
 
         mRView.setLayoutManager(new GridLayoutManager(this, 4));
         mRView.setHasFixedSize(true);
@@ -73,8 +71,7 @@ public class CangjinStoreyActivity extends BaseTitleActivity implements View.OnC
         tv_load_empty.setText("暂无搜索结果");
         ImageView iv_load_empty = view.findViewById(R.id.iv_load_empty);
         iv_load_empty.setImageResource(R.mipmap.icon_no_result);
-
-        mAdapter.setEmptyView(R.layout.empty_view);
+        mAdapter.setEmptyView(view);
 
         //假数据
         ArrayList<String> data = new ArrayList<String>();

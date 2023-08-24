@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/temple_background_gradient_bg"
@@ -35,214 +36,27 @@
             android:text="百家姓"
             android:textColor="#333333"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_one"
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_top"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="28dp">
+        android:layout_height="0dp"
+        android:paddingTop="7.5dp"
+        android:layout_weight="1"
+        app:srlDisableContentWhenRefresh="true">
 
-        <LinearLayout
-            android:id="@+id/layout_surname_zhao"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_list"
+            android:layout_width="match_parent"
+            android:paddingRight="7.5dp"
+            android:paddingLeft="15dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="赵(zhào)" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/xingfont"
-                android:text="趙"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="qián" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="钱" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="sūn" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="孙" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="lǐ" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="李" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_one"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="zhōu" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="周" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="wú"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="吴"></TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="zheng"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="郑"></TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="15dp"
-            app:bl_corners_radius="5dp"
-            app:bl_solid_color="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="wang"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="王"></TextView>
-
-        </LinearLayout>
-    </LinearLayout>
+            tools:itemCount="4"
+            tools:listitem="@layout/item_baijiaxing" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
     <LinearLayout
         android:id="@+id/bottom_button"
@@ -287,4 +101,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -18,23 +18,21 @@ import cn.jzvd.JZVideoPlayerStandard;
 
 public class ContentDetailActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
     TextView mTitle;
-
     @BindView(R.id.tv_content_title)
-    TextView tv_content_title;
+    TextView mTvContentTitle;
     @BindView(R.id.tv_name)
-    TextView tv_name;
+    TextView mTvName;
     @BindView(R.id.tv_time)
-    TextView tv_time;
+    TextView mTvTime;
     @BindView(R.id.tv_toptext)
-    TextView tv_toptext;
-
+    TextView mTvTopText;
     @BindView(R.id.jzplayerview)
     JZVideoPlayerStandard jzvdStd;
 
-    String title, authorName, content, time, videoUrl, coverimg;
+    private String title, authorName, content, time, videoUrl, coverimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +54,10 @@ public class ContentDetailActivity extends BaseTitleActivity implements View.OnC
         videoUrl = getIntent().getStringExtra("video");
         coverimg = getIntent().getStringExtra("coverimg");
 
-        tv_content_title.setText(title);
-        tv_name.setText(authorName);
-        tv_time.setText(time);
-        tv_toptext.setText(content);
-
+        mTvContentTitle.setText(title);
+        mTvName.setText(authorName);
+        mTvTime.setText(time);
+        mTvTopText.setText(content);
 
         jzvdStd.setUp((TextUtils.isEmpty(videoUrl) ? "https://cs-xyxj.oss-cn-hangzhou.aliyuncs.com/video/6be6fed3bb634cd1ee695a4f9c4904ab.mp4"
                 : videoUrl), JZVideoPlayer.SCREEN_WINDOW_NORMAL, "");
@@ -76,7 +73,7 @@ public class ContentDetailActivity extends BaseTitleActivity implements View.OnC
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
 
     }
 

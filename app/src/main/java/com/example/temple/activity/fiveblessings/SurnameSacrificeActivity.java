@@ -26,32 +26,28 @@ import butterknife.BindView;
  */
 public class SurnameSacrificeActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_all)
-    TextView tv_all;
+    TextView mTvAll;
     @BindView(R.id.relat_memorabilia)
-    RelativeLayout relat_memorabilia;
+    RelativeLayout mRelatMemorabilia;
     @BindView(R.id.relat_schedule)
-    RelativeLayout relat_schedule;
-
+    RelativeLayout mRelatSchedule;
     @BindView(R.id.table_order)
     SlidingTabLayout tableOrder;
     @BindView(R.id.order_pager)
     ViewPager orderPager;
 
     @BindView(R.id.tv_my_publishing)
-    TextView tv_my_publishing;
+    TextView mTvMyPublishing;
     @BindView(R.id.tv_add)
-    TextView tv_add;
+    TextView mTvAdd;
 
     AllSurNamePopup allSurNamePopup;
-
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private final String[] mTitles = {"全部", "视频", "相册", "文章"};
     private MyPagerAdapter mAdapter;
     private int mIndex;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,20 +75,18 @@ public class SurnameSacrificeActivity extends BaseTitleActivity implements View.
         orderPager.setAdapter(mAdapter);
         tableOrder.setViewPager(orderPager);
 
-        tv_all.setOnClickListener(this);
-        relat_memorabilia.setOnClickListener(this);
-        relat_schedule.setOnClickListener(this);
-
-        tv_my_publishing.setOnClickListener(this);
-        tv_add.setOnClickListener(this);
-
     }
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mTvAll.setOnClickListener(this);
+        mRelatMemorabilia.setOnClickListener(this);
+        mRelatSchedule.setOnClickListener(this);
+        mTvMyPublishing.setOnClickListener(this);
+        mTvAdd.setOnClickListener(this);
 
         orderPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -122,7 +116,7 @@ public class SurnameSacrificeActivity extends BaseTitleActivity implements View.
                 allSurNamePopup = new AllSurNamePopup(this, new AllSurNamePopup.onClickDone() {
                     @Override
                     public void selectData(String surname) {
-                        tv_all.setText(surname);
+                        mTvAll.setText(surname);
                     }
 
                 });

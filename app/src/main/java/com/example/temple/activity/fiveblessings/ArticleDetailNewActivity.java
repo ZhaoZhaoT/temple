@@ -17,19 +17,19 @@ import butterknife.BindView;
 
 public class ArticleDetailNewActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
     TextView mTitle;
     @BindView(R.id.title)
     TextView titleView;
     @BindView(R.id.tv_author)
-    TextView tv_author;
+    TextView mTvAuthor;
     @BindView(R.id.tv_time)
-    TextView tv_time;
+    TextView mTvTime;
     @BindView(R.id.view)
     WebView webView;
 
-    String title,authorName,content,time;
+    private String title, authorName, content, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,25 +45,23 @@ public class ArticleDetailNewActivity extends BaseTitleActivity implements View.
     protected void initView() {
         baseTitleGone();
         BaseUtils.initWebSetting(webView, Color.parseColor("#FFFFFF"));
-        title=getIntent().getStringExtra("title");
-        authorName=getIntent().getStringExtra("authorName");
-        content=getIntent().getStringExtra("content");
-        time=getIntent().getStringExtra("time");
+        title = getIntent().getStringExtra("title");
+        authorName = getIntent().getStringExtra("authorName");
+        content = getIntent().getStringExtra("content");
+        time = getIntent().getStringExtra("time");
         if (!TextUtils.isEmpty(content)) {
             webView.loadDataWithBaseURL(null, content, "text/html", "utf-8", null);
         }
         titleView.setText(title);
-        tv_author.setText(authorName);
-        tv_time.setText(time);
+        mTvAuthor.setText(authorName);
+        mTvTime.setText(time);
     }
-
-
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
 
     }
 

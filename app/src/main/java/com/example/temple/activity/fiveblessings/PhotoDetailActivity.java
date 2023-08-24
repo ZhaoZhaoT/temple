@@ -16,7 +16,6 @@ public class PhotoDetailActivity extends BaseTitleActivity implements View.OnCli
     @BindView(R.id.tv_title)
     TextView mTitle;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +29,6 @@ public class PhotoDetailActivity extends BaseTitleActivity implements View.OnCli
     @Override
     protected void initView() {
         baseTitleGone();
-
 
     }
 

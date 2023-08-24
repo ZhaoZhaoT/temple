@@ -84,7 +84,7 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
 
 
     private ShoopDetailBean mBean;
-    private Map<String,Object> checkMap=new HashMap();
+    private Map<String, Object> checkMap = new HashMap();
     private NewAddressBean.ContentBean mAddress;
     private String phone;
 
@@ -177,9 +177,9 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
                 }).setOnBannerListener(new OnBannerListener() {
                     @Override
                     public void OnBannerClick(Object data, int position) {
-                        String[] ids=new String[blist.size()];
-                        for(int i=0;i<blist.size();i++){
-                            ids[i]=blist.get(i).getFilePath();
+                        String[] ids = new String[blist.size()];
+                        for (int i = 0; i < blist.size(); i++) {
+                            ids[i] = blist.get(i).getFilePath();
                         }
                         Intent intent = new Intent(mContext, ImagePreViewActivity.class);
                         intent.putExtra("imgIds", ids);
@@ -191,12 +191,14 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
                 tvPicIndex.setVisibility(View.VISIBLE);
             }
             tvShoopName.setText(mBean.getName());
-            if(mBean.getTypeEnum().equals("ONE")){
+            if (mBean.getTypeEnum().equals("ONE")) {
                 tv_type_name.setText("特供区");
-            }else if(mBean.getTypeEnum().equals("TWO")){
+            } else if (mBean.getTypeEnum().equals("TWO")) {
                 tv_type_name.setText("文创区");
-            }else if(mBean.getTypeEnum().equals("THREE")){
+            } else if (mBean.getTypeEnum().equals("THREE")) {
                 tv_type_name.setText("互换区");
+            } else if (mBean.getTypeEnum().equals("FOUR")) {
+                tv_type_name.setText("典藏区");
             }
 
 
@@ -209,20 +211,20 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
                 tvSaleCount.setText("已售" + mBean.getSales());
                 tvSizeName.setText(mBean.getSpecVO().get(0).getSpecName());
 
-                checkMap.put("goodSpecId",mBean.getSpecVO().get(0).getGoodSpecId());
+                checkMap.put("goodSpecId", mBean.getSpecVO().get(0).getGoodSpecId());
 
             }
             detailWeb.loadDataWithBaseURL(null, mBean.getDescription(), "text/html", "utf-8", null);
-        }else if(reqcode==4000){
+        } else if (reqcode == 4000) {
             NewAddressBean bean = (NewAddressBean) re_data;
             List<NewAddressBean.ContentBean> list = bean.getContent();
             if (list.size() > 0) {
-                mAddress=list.get(0);
+                mAddress = list.get(0);
                 initParams(list.get(0));
             } else {
-                if(!TextUtils.isEmpty(BaseApplication.location.getProvince())){
+                if (!TextUtils.isEmpty(BaseApplication.location.getProvince())) {
                     initParams2(BaseApplication.location);
-                }else{
+                } else {
                     tvUserAddress.setText("请选择收货地址");
                 }
 //                tvUserAddress.setText(BaseApplication.userAddress);
@@ -238,7 +240,7 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
         checkMap.put("area", item.getArea());
         checkMap.put("street", item.getDetail());
         checkMap.put("description", item.getDetail());
-        checkMap.put("number",chooseCount);
+        checkMap.put("number", chooseCount);
         checkMap.put("consignee", item.getName());
         checkMap.put("phone", item.getPhone());
         tvUserAddress.setText(item.getAll());
@@ -250,9 +252,9 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
         checkMap.put("area", item.getArea());
         checkMap.put("street", item.getDetail());
         checkMap.put("description", item.getDetail());
-        checkMap.put("number",chooseCount);
+        checkMap.put("number", chooseCount);
         UserInfoBean user = DataCacheUtil.getInstance(mContext).getUserInfo();
-        if(user!=null){
+        if (user != null) {
             checkMap.put("consignee", user.getPhone());
             checkMap.put("phone", user.getPhone());
         }
@@ -260,18 +262,18 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
         tvUserAddress.setText(item.getAll());
     }
 
-    private int chooseCount=1;
+    private int chooseCount = 1;
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.ll_choose_size) {
             showChooseDialog(mBean.getSpecVO(), tvShoopName.getText().toString());
         } else if (view.getId() == R.id.ll_address) {
-            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type",1),Comments.TO_ADDRESS);
-        }else if (view.getId() == R.id.tv_buy) {
-            if(tvUserAddress.getText().toString().equals("请选择收货地址")){
+            startActivityForResult(new Intent(mContext, AddressListActivity.class).putExtra("type", 1), Comments.TO_ADDRESS);
+        } else if (view.getId() == R.id.tv_buy) {
+            if (tvUserAddress.getText().toString().equals("请选择收货地址")) {
                 ToastUtils.showShort("请选择收货地址");
-            }else{
+            } else {
                 showChooseDialog(mBean.getSpecVO(), tvShoopName.getText().toString());
             }
 
@@ -283,14 +285,14 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
     private ShoopDetailBean.SpecVOBean mCheckSpec;
 
     public void showChooseDialog(List<ShoopDetailBean.SpecVOBean> mList, String proName) {
-        if(dialog==null){
+        if (dialog == null) {
             dialog = new BottomListPopup(this, mList, proName, new BottomListPopup.onClickDone() {
                 @Override
                 public void comfirm(int buyAmount, ShoopDetailBean.SpecVOBean specVOBean) {
-                    chooseCount=buyAmount;
-                    mCheckSpec=specVOBean;
+                    chooseCount = buyAmount;
+                    mCheckSpec = specVOBean;
                     startActivity(new Intent(mContext, ConfirmOrderActivity.class)
-                            .putExtra("address",mAddress)
+                            .putExtra("address", mAddress)
                             .putExtra("spec", mCheckSpec)
                             .putExtra("buyCount", chooseCount)
                             .putExtra("bean", mBean));
@@ -318,7 +320,7 @@ public class ShoopDetailActivity extends BaseTitleActivity implements View.OnCli
         if (resultCode == RESULT_OK) {
             if (requestCode == Comments.TO_ADDRESS && data != null) {
                 NewAddressBean.ContentBean bean = (NewAddressBean.ContentBean) data.getSerializableExtra("bean");
-                mAddress=bean;
+                mAddress = bean;
                 initParams(bean);
             }
         }

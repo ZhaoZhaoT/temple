@@ -1,4 +1,3 @@
-
 package com.example.temple.activity.fiveblessings;
 
 import android.os.Bundle;
@@ -13,6 +12,8 @@ import butterknife.BindView;
 
 public class ArticleDetailActivity extends BaseTitleActivity implements View.OnClickListener {
 
+    @BindView(R.id.iv_left)
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
     TextView mTitle;
 
@@ -31,17 +32,13 @@ public class ArticleDetailActivity extends BaseTitleActivity implements View.OnC
     protected void initView() {
         baseTitleGone();
 
-
     }
-
-    @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
 
     }
 

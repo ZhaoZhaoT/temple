@@ -15,27 +15,27 @@ import butterknife.BindView;
  */
 public class CangjinPavilionActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
 
     @BindView(R.id.layout_one)
-    RelativeLayout layout_one;
+    RelativeLayout mLayoutOne;
 
     @BindView(R.id.layout_two)
-    RelativeLayout layout_two;
+    RelativeLayout mLayoutTwo;
     @BindView(R.id.layout_there)
-    RelativeLayout layout_there;
+    RelativeLayout mLayoutThere;
     @BindView(R.id.layout_four)
-    RelativeLayout layout_four;
+    RelativeLayout mLayoutFour;
     @BindView(R.id.layout_five)
-    RelativeLayout layout_five;
+    RelativeLayout mLayoutFive;
     @BindView(R.id.layout_six)
-    RelativeLayout layout_six;
+    RelativeLayout mLayoutSix;
     @BindView(R.id.layout_seven)
-    RelativeLayout layout_seven;
+    RelativeLayout mLayoutSeven;
     @BindView(R.id.layout_eight)
-    RelativeLayout layout_eight;
+    RelativeLayout mLayoutEight;
     @BindView(R.id.layout_nine)
-    RelativeLayout layout_nine;
+    RelativeLayout mLayoutNine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,24 +51,23 @@ public class CangjinPavilionActivity extends BaseTitleActivity implements View.O
     protected void initView() {
         baseTitleGone();
 
-
     }
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
 
-        layout_one.setOnClickListener(this);
-        layout_two.setOnClickListener(this);
-        layout_there.setOnClickListener(this);
-        layout_four.setOnClickListener(this);
-        layout_five.setOnClickListener(this);
-        layout_six.setOnClickListener(this);
-        layout_seven.setOnClickListener(this);
-        layout_eight.setOnClickListener(this);
-        layout_nine.setOnClickListener(this);
+        mLayoutOne.setOnClickListener(this);
+        mLayoutTwo.setOnClickListener(this);
+        mLayoutThere.setOnClickListener(this);
+        mLayoutFour.setOnClickListener(this);
+        mLayoutFive.setOnClickListener(this);
+        mLayoutSix.setOnClickListener(this);
+        mLayoutSeven.setOnClickListener(this);
+        mLayoutEight.setOnClickListener(this);
+        mLayoutNine.setOnClickListener(this);
 
     }
 
@@ -76,6 +75,7 @@ public class CangjinPavilionActivity extends BaseTitleActivity implements View.O
     public void onClick(View v) {
         if (v.getId() == R.id.iv_left) {
             finish();
+
         } else if (v.getId() == R.id.layout_one) {
             startActivity(new Intent(CangjinPavilionActivity.this, CangjinStoreyActivity.class).putExtra("store", "一"));
 

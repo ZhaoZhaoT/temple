@@ -472,12 +472,12 @@
             android:id="@+id/tv_btn2"
             android:gravity="center"
             app:bl_corners_radius="25dp"
-            app:bl_stroke_color="@color/text_main"
+            app:bl_stroke_color="#C89667"
             app:bl_stroke_width="1dp"
             android:textSize="12sp"
             tools:text="去支付"
             android:layout_marginRight="10dp"
-            android:textColor="@color/text_main"
+            android:textColor="#C89667"
             android:layout_width="66dp"
             android:layout_height="32dp"/>
     </LinearLayout>

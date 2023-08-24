@@ -188,6 +188,8 @@ public class OrderDetailActivity extends BaseTitleActivity implements View.OnCli
                 tv_zoom.setText("文创区");
             }else if(detailBean.getOrderItemVO().getTypeEnum().equals("THREE")){
                 tv_zoom.setText("互换区");
+            }else if(detailBean.getOrderItemVO().getTypeEnum().equals("FOUR")){
+                tv_zoom.setText("典藏区");
             }
 
             tv_send_address.setText(detailBean.getContractAddress());

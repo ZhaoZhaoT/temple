@@ -28,6 +28,7 @@ public class Comments {
     public static String EDIT_ADDRESS = BASE_URL + "/api/v1/address/update";
     public static String DEL_ADDRESS = BASE_URL + "/api/v1/address/delete";
 
+
     public static String CHECK_UPDATE = BASE_URL + "/api/v1/apk/check";
 
     //获取系统配置数据

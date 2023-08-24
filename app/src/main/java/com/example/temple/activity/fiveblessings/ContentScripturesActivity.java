@@ -15,9 +15,9 @@ import butterknife.BindView;
  */
 public class ContentScripturesActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
-    TextView tv_title;
+    TextView mTvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +38,7 @@ public class ContentScripturesActivity extends BaseTitleActivity implements View
     @Override
     protected void initListener() {
         super.initListener();
-
-        iv_left.setOnClickListener(this);
-
+        mIvLeft.setOnClickListener(this);
 
     }
 

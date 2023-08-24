@@ -38,27 +38,25 @@ import butterknife.BindView;
  */
 public class ScheduleActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-    private int from;//0 姓氏  1 宗亲
-
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_last_month)
-    TextView tv_last_month;
+    TextView mTvLastMonth;
     @BindView(R.id.tv_title)
-    TextView tv_title;
+    TextView mTvTitle;
     @BindView(R.id.next_last_month)
-    TextView next_last_month;
-
-
+    TextView mNextLastMonth;
     @BindView(R.id.calendarView)
     CalendarView mCalendarView;
-
     @BindView(R.id.rView)
     RecyclerView mRView;
-    private ScheduleAdapter mAdapter;
 
     @BindView(R.id.tv_add_schedule)
-    TextView tv_add_schedule;
+    TextView mTvAddSchedule;
 
+    private ScheduleAdapter mAdapter;
+    private int from;//0 姓氏  1 宗亲
+    String desc = "";//班休标识
+    String restfulDay = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,20 +97,16 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
     protected void initView() {
         baseTitleGone();
         from = getIntent().getIntExtra("from", 0);
-
-        tv_title.setText(Integer.parseInt(DateUtil.parseDateToStr(new Date(), "yyyy")) + " - " +
+        mTvTitle.setText(Integer.parseInt(DateUtil.parseDateToStr(new Date(), "yyyy")) + " - " +
                 (Integer.parseInt(DateUtil.parseDateToStr(new Date(), "MM")) < 10 ? "0" + Integer.parseInt(DateUtil.parseDateToStr(new Date(), "MM")) :
                         Integer.parseInt(DateUtil.parseDateToStr(new Date(), "MM"))));
 
-        String desc = "";//班休标识
-        String restfulDay = "1";
 
         if (RestfulDayType.RESTFUL.getType().equals(restfulDay)) {
             desc = RestfulDayType.RESTFUL.getDesc();
         } else if (RestfulDayType.WORK.getType().equals(restfulDay)) {
             desc = RestfulDayType.WORK.getDesc();
         }
-
 
         Calendar schemeCalendar = new Calendar();
         schemeCalendar.setYear(2023);
@@ -140,7 +134,6 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
         schemeCalendar3.addScheme(10, Color.parseColor("#8BC343"), "");//圆点标识
         holidayMap.put(schemeCalendar3.toString(), schemeCalendar3);
 
-
         mCalendarView.setSchemeDate(holidayMap);
 
         //日历显示隐藏
@@ -152,8 +145,6 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
 //            }
 //            mCalendarLayout.showCalendarView();
 //        }
-//
-
 
         mRView.setLayoutManager(new LinearLayoutManager(this));
         mRView.setHasFixedSize(true);
@@ -166,8 +157,7 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
         tv_load_empty.setText("暂无数据");
         ImageView iv_load_empty = view.findViewById(R.id.iv_load_empty);
         iv_load_empty.setImageResource(R.mipmap.haode_botton);
-
-        mAdapter.setEmptyView(R.layout.empty_view);
+        mAdapter.setEmptyView(view);
 
         //假数据
         ArrayList<String> data = new ArrayList<String>();
@@ -192,7 +182,7 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
 
             @Override
             public void onCalendarSelect(Calendar calendar, boolean isClick) {
-                tv_title.setText(calendar.getYear() + " - " + (calendar.getMonth() < 10 ? "0" + calendar.getMonth() : calendar.getMonth()));
+                mTvTitle.setText(calendar.getYear() + " - " + (calendar.getMonth() < 10 ? "0" + calendar.getMonth() : calendar.getMonth()));
             }
         });
 
@@ -202,10 +192,10 @@ public class ScheduleActivity extends BaseTitleActivity implements View.OnClickL
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
-        tv_last_month.setOnClickListener(this);
-        next_last_month.setOnClickListener(this);
-        tv_add_schedule.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mTvLastMonth.setOnClickListener(this);
+        mNextLastMonth.setOnClickListener(this);
+        mTvAddSchedule.setOnClickListener(this);
     }
 
     @Override

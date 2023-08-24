@@ -24,16 +24,14 @@ import butterknife.BindView;
  */
 public class ContentDirectoryActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-
+    RelativeLayout mIvLeft;
     @BindView(R.id.rView)
     RecyclerView mRView;
-    private ZhuziBaijiaDirectoryAdapter mAdapter;
-
     @BindView(R.id.rView_two)
     RecyclerView mRViewTwo;
-    private ZhuziBaijiaDirectoryAdapter mTwoAdapter;
 
+    private ZhuziBaijiaDirectoryAdapter mAdapter;
+    private ZhuziBaijiaDirectoryAdapter mTwoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,9 +98,7 @@ public class ContentDirectoryActivity extends BaseTitleActivity implements View.
     @Override
     protected void initListener() {
         super.initListener();
-
-        iv_left.setOnClickListener(this);
-
+        mIvLeft.setOnClickListener(this);
 
     }
 

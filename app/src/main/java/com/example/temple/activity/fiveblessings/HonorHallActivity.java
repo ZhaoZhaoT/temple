@@ -16,10 +16,9 @@ import butterknife.BindView;
  */
 public class HonorHallActivity extends BaseTitleActivity implements View.OnClickListener {
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
-
+    RelativeLayout mIvLeft;
     @BindView(R.id.iv_rank)
-    ImageView iv_rank;
+    ImageView mIvRank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +34,14 @@ public class HonorHallActivity extends BaseTitleActivity implements View.OnClick
     protected void initView() {
         baseTitleGone();
 
-
     }
 
 
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
-        iv_rank.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mIvRank.setOnClickListener(this);
 
     }
 

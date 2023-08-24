@@ -3,6 +3,7 @@ package com.example.temple.dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -17,10 +18,16 @@ import org.jetbrains.annotations.NotNull;
 public class SurNamePopup extends CenterPopupView implements View.OnClickListener {
 
     ImageView iv_close;
+    TextView tv_title;
+    TextView tv_content;
 
-    public SurNamePopup(@NonNull @NotNull Context context) {
+
+    private String title, content;
+
+    public SurNamePopup(@NonNull @NotNull Context context, String title, String content) {
         super(context);
-
+        this.title = title;
+        this.content = content;
     }
 
     @Override
@@ -32,6 +39,11 @@ public class SurNamePopup extends CenterPopupView implements View.OnClickListene
     protected void onCreate() {
         super.onCreate();
         iv_close = findViewById(R.id.iv_close);
+        tv_title = findViewById(R.id.tv_title);
+        tv_content = findViewById(R.id.tv_content);
+
+        tv_title.setText(title);
+        tv_content.setText(content);
         iv_close.setOnClickListener(this);
     }
 

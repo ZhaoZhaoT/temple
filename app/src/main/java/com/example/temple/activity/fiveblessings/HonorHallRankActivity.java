@@ -58,8 +58,7 @@ public class HonorHallRankActivity extends BaseTitleActivity implements View.OnC
         tv_load_empty.setText("暂无数据");
         ImageView iv_load_empty = view.findViewById(R.id.iv_load_empty);
         iv_load_empty.setImageResource(R.mipmap.haode_botton);
-
-        mAdapter.setEmptyView(R.layout.empty_view);
+        mAdapter.setEmptyView(view);
 
         //假数据
         ArrayList<String> data = new ArrayList<String>();

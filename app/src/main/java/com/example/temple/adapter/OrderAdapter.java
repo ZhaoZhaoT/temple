@@ -20,7 +20,8 @@ public class OrderAdapter extends BaseQuickAdapter<OrderBean.ContentBean, BaseVi
                 .setText(R.id.tv_choose_number,"X"+item.getOrderItemVO().getAmount())
                 .setText(R.id.tv_size,"规格："+item.getOrderItemVO().getSpecVO().getSpecName())
                 .setText(R.id.tv_price,"¥"+item.getPayMoney())
-                .setText(R.id.tv_zoom,item.getOrderItemVO().getTypeEnum().equals("ONE")?"特供区":item.getOrderItemVO().getTypeEnum().equals("TWO")?"文创区":"互换区");
+                .setText(R.id.tv_zoom,item.getOrderItemVO().getTypeEnum().equals("ONE")?"特供区":item.getOrderItemVO().getTypeEnum().equals("TWO")?"文创区":
+                        item.getOrderItemVO().getTypeEnum().equals("THREE")?"互换区":"典藏区");
         helper.setText(R.id.tv_shoop_name,"共"+item.getOrderItemVO().getAmount()+"件商品，实付：");
         helper.setText(R.id.all_money,"¥" + item.getPayMoney());
 

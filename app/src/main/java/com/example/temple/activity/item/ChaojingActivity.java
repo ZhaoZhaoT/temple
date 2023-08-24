@@ -44,27 +44,26 @@ public class ChaojingActivity extends BaseTitleActivity implements View.OnClickL
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.tv_title)
     TextView mTitle;
     @BindView(R.id.lin_my)
-    RelativeLayout lin_my;
+    RelativeLayout mLinMy;
     @BindView(R.id.head)
     ImageView head;
     @BindView(R.id.tv_nikename)
-    TextView tv_nikename;
+    TextView mTvNikename;
     @BindView(R.id.tv_copy_count)
-    TextView tv_copy_count;
-
+    TextView mTvCopyCount;
     @BindView(R.id.lin_rank)
-    LinearLayout lin_rank;
+    LinearLayout mLinRank;
 
     @BindView(R.id.view_list)
-    RecyclerView view_list;
+    RecyclerView mViewList;
     JinWenRankAdapter jinWenRankAdapter;
 
     @BindView(R.id.view_list_two)
-    RecyclerView view_list_two;
+    RecyclerView mViewListTwo;
     JinWenListAdapter jinWenListAdapter;
 
     private int page = 0, size = 10, mTotalPage;
@@ -98,16 +97,16 @@ public class ChaojingActivity extends BaseTitleActivity implements View.OnClickL
         });
         refreshLayout.setHeaderTriggerRate(0.3f);
 
-        view_list.setLayoutManager(new LinearLayoutManager(this));
-        view_list.setHasFixedSize(true);
+        mViewList.setLayoutManager(new LinearLayoutManager(this));
+        mViewList.setHasFixedSize(true);
         jinWenRankAdapter = new JinWenRankAdapter(R.layout.item_progress_rank, "部");
-        view_list.setAdapter(jinWenRankAdapter);
+        mViewList.setAdapter(jinWenRankAdapter);
 
 
-        view_list_two.setLayoutManager(new LinearLayoutManager(this));
-        view_list_two.setHasFixedSize(true);
+        mViewListTwo.setLayoutManager(new LinearLayoutManager(this));
+        mViewListTwo.setHasFixedSize(true);
         jinWenListAdapter = new JinWenListAdapter(R.layout.item_jinwen_list);
-        view_list_two.setAdapter(jinWenListAdapter);
+        mViewListTwo.setAdapter(jinWenListAdapter);
         View view = LayoutInflater.from(this).inflate(R.layout.empty_view, null);
         TextView tv_load_empty = view.findViewById(R.id.tv_load_empty);
         tv_load_empty.setText("暂无数据");
@@ -230,9 +229,9 @@ public class ChaojingActivity extends BaseTitleActivity implements View.OnClickL
             RankListBean bean = (RankListBean) re_data;
             jinWenRankAdapter.setList(bean.getRanking());
             if (!ListUtils.isEmpty(bean.getRanking())) {
-                lin_rank.setVisibility(View.VISIBLE);
+                mLinRank.setVisibility(View.VISIBLE);
             } else {
-                lin_rank.setVisibility(View.GONE);
+                mLinRank.setVisibility(View.GONE);
             }
 
             if (bean.getMyRanking() != null) {
@@ -240,28 +239,26 @@ public class ChaojingActivity extends BaseTitleActivity implements View.OnClickL
                 if (bean.getRanking().size() > 3) {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     params.height = SizeUtils.dp2px((39 * 4)) + SizeUtils.dp2px((30));
-                    lin_rank.setLayoutParams(params);
+                    mLinRank.setLayoutParams(params);
                 } else {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     params.height = SizeUtils.dp2px((39 * (bean.getRanking().size() + 1))) + SizeUtils.dp2px((30));
-                    lin_rank.setLayoutParams(params);
+                    mLinRank.setLayoutParams(params);
                 }
-
-                lin_my.setVisibility(View.VISIBLE);
+                mLinMy.setVisibility(View.VISIBLE);
                 GlideUtils.loadCircleImage(mContext, bean.getMyRanking().getAvatar_url(), R.mipmap.default_head, head);
-                tv_nikename.setText(bean.getMyRanking().getNick_name() + "(我)");
-                tv_copy_count.setText(bean.getMyRanking().getCounts() + "部");
+                mTvNikename.setText(bean.getMyRanking().getNick_name() + "(我)");
+                mTvCopyCount.setText(bean.getMyRanking().getCounts() + "部");
             } else {
-                lin_my.setVisibility(View.GONE);
-
+                mLinMy.setVisibility(View.GONE);
                 if (bean.getRanking().size() > 3) {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     params.height = SizeUtils.dp2px((39 * 3)) + SizeUtils.dp2px((30));
-                    lin_rank.setLayoutParams(params);
+                    mLinRank.setLayoutParams(params);
                 } else {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     params.height = SizeUtils.dp2px((39 * bean.getRanking().size())) + SizeUtils.dp2px((30));
-                    lin_rank.setLayoutParams(params);
+                    mLinRank.setLayoutParams(params);
                 }
 
             }
@@ -285,7 +282,7 @@ public class ChaojingActivity extends BaseTitleActivity implements View.OnClickL
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
     }
 
     @Override

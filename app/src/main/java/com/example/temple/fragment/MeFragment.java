@@ -66,7 +66,7 @@ public class MeFragment extends BaseFragment {
         } else {
             GlideUtils.loadCircleImage(getContext(), user.getAvatarUrl(), R.mipmap.default_head, ivHead);
             ivHead.setTag(user.getAvatarUrl());
-            tvUserPhone.setText(user.getPhone());
+            tvUserPhone.setText(BaseUtils.phoneEncode(user.getPhone()));
             if (!TextUtils.isEmpty(user.getUserLevelName())) {
                 if (user.getUserLevelName().equals("ZERO")) {
                     user_level.setVisibility(View.GONE);

@@ -65,8 +65,7 @@ public class GenealogyActivity extends BaseTitleActivity implements View.OnClick
         tv_load_empty.setText("开始建立族谱吧");
         ImageView iv_load_empty = view.findViewById(R.id.iv_load_empty);
         iv_load_empty.setImageResource(R.mipmap.icon_no_framily);
-
-        mAdapter.setEmptyView(R.layout.empty_view);
+        mAdapter.setEmptyView(view);
 
         //假数据
         data.add("我家");

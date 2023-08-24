@@ -12,19 +12,18 @@ import com.example.temple.activity.base.BaseTitleActivity;
 import butterknife.BindView;
 
 public class FiveBlessingsActivity extends BaseTitleActivity implements View.OnClickListener {
-
     @BindView(R.id.iv_left)
-    RelativeLayout iv_left;
+    RelativeLayout mIvLeft;
     @BindView(R.id.baijiax)
-    ImageView baijiax;
+    ImageView mBaiJiaX;
     @BindView(R.id.iv_honor_hall)
-    ImageView iv_honor_hall;
+    ImageView mIvHonorHall;
     @BindView(R.id.iv_hundred_schools_thought)
-    ImageView iv_hundred_schools_thought;
+    ImageView mIvHundredSchoolsThought;
     @BindView(R.id.iv_cangjin_pavilion)
-    ImageView iv_cangjin_pavilion;
+    ImageView mIvCangjinPavilion;
     @BindView(R.id.iv_guangchang)
-    ImageView iv_guangchang;
+    ImageView mIvGuangchang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +44,12 @@ public class FiveBlessingsActivity extends BaseTitleActivity implements View.OnC
     @Override
     protected void initListener() {
         super.initListener();
-        iv_left.setOnClickListener(this);
-        baijiax.setOnClickListener(this);
-        iv_honor_hall.setOnClickListener(this);
-        iv_hundred_schools_thought.setOnClickListener(this);
-        iv_cangjin_pavilion.setOnClickListener(this);
-        iv_guangchang.setOnClickListener(this);
+        mIvLeft.setOnClickListener(this);
+        mBaiJiaX.setOnClickListener(this);
+        mIvHonorHall.setOnClickListener(this);
+        mIvHundredSchoolsThought.setOnClickListener(this);
+        mIvCangjinPavilion.setOnClickListener(this);
+        mIvGuangchang.setOnClickListener(this);
     }
 
     @Override
