@@ -48,47 +48,41 @@ import rxhttp.wrapper.param.RxHttp;
 public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
-
     @BindView(R.id.main_banner)
-    Banner banner;
-
+    Banner mBanner;
     @BindView(R.id.ll_changshou)
     LinearLayout llChangshou;
-
     @BindView(R.id.ll_fugui)
     LinearLayout llFugui;
-
     @BindView(R.id.ll_haode)
     LinearLayout llHaode;
-
     @BindView(R.id.ll_kangning)
     LinearLayout llKangning;
-
     @BindView(R.id.ll_shanzhong)
     LinearLayout llShanzhong;
     @BindView(R.id.ll_yuyuelaoshi)
-    LinearLayout ll_yuyuelaoshi;
+    LinearLayout llYuyuelaoshi;
     @BindView(R.id.ll_shop)
-    LinearLayout ll_shop;
+    LinearLayout llShop;
     @BindView(R.id.ll_dailishang)
-    LinearLayout ll_dailishang;
+    LinearLayout llDailishang;
     @BindView(R.id.ll_daoli)
-    LinearLayout ll_daoli;
+    LinearLayout llDaoli;
     @BindView(R.id.ll_wufu)
-    LinearLayout ll_wufu;
+    LinearLayout llWufu;
 
     @BindView(R.id.iv_longevity_chapter)
-    ImageView iv_longevity_chapter;
+    ImageView ivLongevityChapter;
     @BindView(R.id.iv_wealth_honor_chapter)
-    ImageView iv_wealth_honor_chapter;
+    ImageView ivWealthHonorChapter;
     @BindView(R.id.iv_haode)
-    ImageView iv_haode;
+    ImageView ivHaode;
     @BindView(R.id.iv_kangning)
-    ImageView iv_kangning;
+    ImageView ivKangNing;
     @BindView(R.id.iv_shanzhong)
-    ImageView iv_shanzhong;
+    ImageView ivShanzhong;
 
-    HintViewPopup hintViewPopup;
+    private HintViewPopup hintViewPopup;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -106,14 +100,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         refreshLayout.setEnableLoadMore(false);
         refreshLayout.setHeaderTriggerRate(0.3f);
 
-        banner.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
-        banner.setImageLoader(new CustomRoundedImageLoader());
+        mBanner.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
+        mBanner.setImageLoader(new CustomRoundedImageLoader());
         // 设置banner动画效果
-        banner.setBannerAnimation(Transformer.Default);
+        mBanner.setBannerAnimation(Transformer.Default);
         // 设置轮播时间
-        banner.setDelayTime(3000);
+        mBanner.setDelayTime(3000);
         // 设置指示器位置（当banner模式中有指示器时）
-        banner.setIndicatorGravity(BannerConfig.CENTER);
+        mBanner.setIndicatorGravity(BannerConfig.CENTER);
 
         // 设置标题集合（当banner样式有显示title时）
         //xw_banner.setBannerTitles(stringList);
@@ -136,19 +130,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         llHaode.setOnClickListener(this);
         llKangning.setOnClickListener(this);
         llShanzhong.setOnClickListener(this);
-        ll_yuyuelaoshi.setOnClickListener(this);
-        ll_shop.setOnClickListener(this);
-        ll_dailishang.setOnClickListener(this);
-        ll_daoli.setOnClickListener(this);
-        ll_wufu.setOnClickListener(this);
+        llYuyuelaoshi.setOnClickListener(this);
+        llShop.setOnClickListener(this);
+        llDailishang.setOnClickListener(this);
+        llDaoli.setOnClickListener(this);
+        llWufu.setOnClickListener(this);
 
-        iv_longevity_chapter.setOnClickListener(this);
-        iv_wealth_honor_chapter.setOnClickListener(this);
-        iv_haode.setOnClickListener(this);
-        iv_kangning.setOnClickListener(this);
-        iv_shanzhong.setOnClickListener(this);
-
-
+        ivLongevityChapter.setOnClickListener(this);
+        ivWealthHonorChapter.setOnClickListener(this);
+        ivHaode.setOnClickListener(this);
+        ivKangNing.setOnClickListener(this);
+        ivShanzhong.setOnClickListener(this);
     }
 
 
@@ -172,8 +164,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
         } else if (v.getId() == R.id.ll_yuyuelaoshi) {
             startActivity(new Intent(getActivity(), OrderTeacherActivity.class));
-        } else if (v.getId() == R.id.ll_shop) {
-            startActivity(new Intent(getActivity(), ShopActivity.class));
         } else if (v.getId() == R.id.ll_shop) {
             startActivity(new Intent(getActivity(), ShopActivity.class));
         } else if (v.getId() == R.id.ll_dailishang) {
@@ -220,7 +210,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                                 hintViewPopup = new HintViewPopup(getActivity(), "此模块需在典藏区购买99元产品 成为道友方可阅览", new HintViewPopup.onClickDone() {
                                     @Override
                                     public void selectAffrim() {
-                                        startActivity(new Intent(getActivity(), GoodListActivity.class).putExtra("type",4));
+                                        startActivity(new Intent(getActivity(), GoodListActivity.class).putExtra("type", 4));
                                         hintViewPopup.dismiss();
                                     }
 
@@ -248,7 +238,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                                 startActivity(new Intent(getActivity(), FiveBlessingsActivity.class));
                             }
                         }
-//
+
                     }
                 }, (OnError) error -> {
                     onJsonDataGetFailed(error.getErrorCode(), error.getErrorMsg(), 3000);
@@ -291,9 +281,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     for (int i = 0; i < blist.size(); i++) {
                         data.add(blist.get(i).getImagePath());
                     }
-                    banner.setImages(data);
-                    banner.start();
-                    banner.setOnBannerListener(new OnBannerListener() {
+                    mBanner.setImages(data);
+                    mBanner.start();
+                    mBanner.setOnBannerListener(new OnBannerListener() {
                         @Override
                         public void OnBannerClick(int position) {
                         }

@@ -140,6 +140,7 @@
         <activity android:name=".activity.fiveblessings.CreateScheduleActivity" />
         <activity android:name=".activity.fiveblessings.ContentDirectoryActivity" />
 
+        <activity android:name=".activity.livebroadcast.LiveBroadcastDetailActivity" />
 
         <activity android:name=".activity.agent.AgentActivity" />
         <activity android:name=".activity.agent.AgentSuccessActivity" />
